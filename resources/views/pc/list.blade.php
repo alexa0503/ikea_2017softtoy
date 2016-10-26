@@ -18,10 +18,10 @@
 					@foreach ($works as $work)
                 	<div class="ilInit">
                     	<div class="innerDiv">
-                        	<img src="{{asset('/assets/pc/images/upload/img1.png')}}" class="abs iImg">
-                            <a href="javascript:void(0);" onClick="showDetail(this);" id='' class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
-                            <a href="javascript:void(0);" onClick="showDetail(this);" id='' class="abs ilName">{{$work->user->name}}</a>
-                            <a href="javascript:void(0);" onClick="showDetail(this);" id='' class="abs ilTitle">{{$work->title}}</a>
+                        	<img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
+                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
+                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilName">{{$work->user->name}}</a>
+                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilTitle">{{$work->title}}</a>
                         </div>
                     </div>
 					@endforeach
@@ -66,7 +66,7 @@
         <div class="abs loadingBg" style="display:none;"></div>
         <div class="imgDetail" style="display:none;">
         	<div class="innerDiv">
-            	<img src="{{asset('/assets/pc/images/upload/img1.png')}}" class="abs idImg">
+            	<img src="" class="abs idImg">
                 <img src="{{asset('/assets/pc/images/page7Img2.png')}}" class="abs idCover">
                 <div class="idName"></div>
                 <div class="idTitle"></div>

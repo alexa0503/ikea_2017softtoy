@@ -21,6 +21,20 @@ class MobileController extends Controller
     {
         return view('mobile/index');
     }
+    public function work(Request $request,$id)
+    {
+        $work = App\Work::find($id);
+        $result = [
+            'ret' => 0,
+            'data' => [
+                'title'=>$work->title,
+                'child_name'=>$work->child_name,
+                'introduction'=>$work->introduction,
+                'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
+            ]
+        ];
+        return $result;
+    }
     public function list(Request $request)
     {
         $model = App\Work::offset(0)->limit(20);

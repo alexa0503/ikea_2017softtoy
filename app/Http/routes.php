@@ -24,6 +24,7 @@ Route::get('mobile/upload', 'MobileController@upload');
 Route::post('mobile/upload', 'MobileController@postUpload');
 Route::get('mobile/success', 'MobileController@success');
 Route::post('mobile/success', 'MobileController@postSuccess');
+Route::get('mobile/work/{id}', 'MobileController@work');
 
 Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));

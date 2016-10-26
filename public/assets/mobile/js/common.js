@@ -574,8 +574,14 @@ function showDetail(e) {
     var url = $(e).attr('data-url');
     $.getJSON(url,function(json){
         $('.popBg').show();
+        $('.idImg').attr('src',json.data.img_url)
+        $('.idName').html(json.data.child_name);
+        $('.idTitle').html(json.data.title);
+        $('.idDesc').html(json.data.introduction);
         //$(window).scrollTop(0);
         $('.imgDetail').show();
+    }).fail(function(){
+        alert('网络异常~');
     })
 }
 
