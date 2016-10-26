@@ -35,7 +35,7 @@ class MobileController extends Controller
         ];
         return $result;
     }
-    public function list(Request $request)
+    public function workList(Request $request)
     {
         $model = App\Work::offset(0)->limit(20);
         if( null != $request->get('key') ){
@@ -144,6 +144,7 @@ class MobileController extends Controller
         $work->comment = null;
         $work->expect = null;
         $work->save();
+        \QrCode::format('png')->size(600)->generate(url('mobile/work', ['id'=>$work->id]),public_path('uploads/qrcodes/'.$work->id.'.png'));
         return ['ret'=>0,'msg'=>'','url'=>url('mobile/success')];
     }
 }

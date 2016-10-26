@@ -11,11 +11,11 @@
 |
 */
 Route::get('/', 'HomeController@index');
-Route::get('list', 'HomeController@list');
+Route::get('list', 'HomeController@workList');
 Route::get('winners', 'HomeController@winners');
 
 Route::get('mobile/index', 'MobileController@index');
-Route::get('mobile/list', 'MobileController@list');
+Route::get('mobile/list', 'MobileController@workList');
 Route::get('mobile/my', 'MobileController@my');
 Route::get('mobile/winners', 'MobileController@winners');
 Route::get('mobile/login', 'MobileController@login');

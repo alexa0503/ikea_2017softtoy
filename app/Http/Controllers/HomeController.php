@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         return view('pc/index');
     }
-    public function list()
+    public function workList()
     {
         $works = App\Work::orderBy('created_at','DESC')->paginate(20);
         return view('pc/list',['works'=>$works]);
