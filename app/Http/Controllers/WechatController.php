@@ -30,14 +30,14 @@ class WechatController extends Controller
             $code = $request->get('code');
             $url = 'http://ikea.aitoy.com/wx/api/server/oauth2/getuser.json?code='.$code;
             $data = json_decode(\App\Helper\HttpClient::get($url));
-            if( null != $data && $data->errorCode == 0 ){
-                $openid = $data->openid;
-                $nick_name = $data->nickname;
-                $head_img = $data->headimgurl;
-                $country = $data->country;
-                $province  = $data->province;
-                $city  = $data->city;
-                $sex = $data->sex;
+            if( null != $data && $data->success == false ){
+                $openid = $data->obj->openid;
+                $nick_name = '';
+                $head_img = '';
+                $country = '';
+                $province  = '';
+                $city  = '';
+                $sex = '';
                 $wechat_user = \App\WechatUser::where('open_id', $openid);
                 if ($wechat_user->count() > 0) {
                     $wechat = $wechat_user->first();
