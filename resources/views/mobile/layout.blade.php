@@ -38,10 +38,11 @@
     @yield('content')
     <script>
     $(document).ready(function() {
-        $.getJSON('{{url("wx/share")}}', {url:location.href},function(data){
-    		data.link = '{{url("mobile/index")}}';
-    		wxShare(data);
-        })
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
     });
     </script>
     <script>
