@@ -11,6 +11,8 @@
 <script src="{{asset('/assets/mobile/js/jquery.form.js')}}"></script>
 <script src="{{asset('/assets/mobile/js/exif.js')}}"></script>
 <script src="{{asset('/assets/mobile/js/common.js')}}"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="{{asset('/assets/mobile/js/wx.js')}}"></script>
 
 <!--移动端版本兼容 -->
 <script type="text/javascript">
@@ -36,11 +38,20 @@
     @yield('content')
     <script>
     $(document).ready(function() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        $.getJSON('{{url("wx/share")}}', {url:location.href},function(data){
+    		data.link = '{{url("mobile/index")}}';
+    		wxShare(data);
+        })
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $.getJSON('{{url("wx/share")}}', {url:location.href},function(data){
+            @section('wxShare')
+            data.link = '{{url("mobile/index")}}';
+            wxShare(data);
+            @show
+        })
     });
     </script>
 </body>

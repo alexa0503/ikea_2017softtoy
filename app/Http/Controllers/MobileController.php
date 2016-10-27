@@ -85,6 +85,14 @@ class MobileController extends Controller
         }
         return view('mobile/my',['work'=>$work]);
     }
+    public function share()
+    {
+        $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
+        if( null == $work){
+            return redirect(url('mobile/index'));
+        }
+        return view('mobile/my',['work'=>$work]);
+    }
     public function success()
     {
         return view('mobile/success');

@@ -19,6 +19,7 @@ Route::get('mobile', 'MobileController@index');
 Route::get('mobile/index', 'MobileController@index');
 Route::get('mobile/list', 'MobileController@workList');
 Route::get('mobile/my', 'MobileController@my');
+Route::get('mobile/share/{id}', 'MobileController@share');
 Route::get('mobile/winners', 'MobileController@winners');
 Route::get('mobile/login', 'MobileController@login');
 Route::post('mobile/login', 'MobileController@postLogin');

@@ -1,6 +1,5 @@
 @extends('mobile.layout')
 @section('content')
-
 <div class="bg">
 	<div class="innerDiv">
     	<div class="page page6">
@@ -32,4 +31,8 @@
         <img src="{{asset('/assets/mobile/images/loading.gif')}}" width="60" height="60" class="abs loadingImg" style="display:none;">
     </div>
 </div>
+@endsection
+@section('wxShare')
+data.link = '{{url("mobile/share",["id"=>$work->id])}}';
+wxShare(data);
 @endsection
