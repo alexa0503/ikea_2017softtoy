@@ -70,6 +70,7 @@ class MobileController extends Controller
             $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
             $wechat_user->name = $request->input('name');
             $wechat_user->mobile = $request->input('mobile');
+            $request->session()->set('wechat.mobile', $wechat_user->mobile);
             $wechat_user->save();
             return ['ret'=>0];
         }
