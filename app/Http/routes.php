@@ -42,7 +42,7 @@ Route::get('/wx/share', function(){
     $js = $wx->js;
     $js->setUrl($url);
     $n = rand(0,1);
-    $config = json_decode($js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'), false, true);
+    $config = json_decode($js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'), false), true);
     $share = [
       'title' => env('WECHAT_SHARE_TITLE'),
       'desc' => env('WECHAT_SHARE_DESC'),
