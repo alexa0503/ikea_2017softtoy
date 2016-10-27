@@ -388,6 +388,7 @@ function showDetail(e) {
         $('.idName').html(json.data.child_name);
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
+        $('.idQc').attr('src', json.data.qrcode_url);
 
 	    $('.loadingBg').show();
 	    $('.imgDetail').show();

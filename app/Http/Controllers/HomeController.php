@@ -29,7 +29,8 @@ class HomeController extends Controller
                 'title'=>$work->title,
                 'child_name'=>$work->child_name,
                 'introduction'=>$work->introduction,
-                'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
+                'img_url'=>asset('uploads/photo/'.$work->img_path),
+                'qrcode_url'=>asset('uploads/qrcodes/'.$work->id.'.png')
             ]
         ];
         return $result;

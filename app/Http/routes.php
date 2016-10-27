@@ -13,6 +13,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('list', 'HomeController@workList');
 Route::get('winners', 'HomeController@winners');
+Route::get('work/{id}', 'HomeController@work');
 
 
 Route::get('mobile', 'MobileController@index');
@@ -41,11 +42,10 @@ Route::get('/wx/share', function(){
     $js = $wx->js;
     $js->setUrl($url);
     $n = rand(0,1);
-    $config = json_decode($js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'), false), true);
+    $config = json_decode($js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'), false, true);
     $share = [
       'title' => env('WECHAT_SHARE_TITLE'),
-      'desc' => env('WECHAT_DESC'),
-      //'link' => env('APP_URL'),
+      'desc' => env('WECHAT_SHARE_DESC'),
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
     ];
     return json_encode(array_merge($share, $config));

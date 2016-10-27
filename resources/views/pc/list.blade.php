@@ -19,7 +19,7 @@
                 	<div class="ilInit">
                     	<div class="innerDiv">
                         	<img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
-                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
+                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('work',['id'=>$work->id])}}" class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilName">{{$work->user->name}}</a>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilTitle">{{$work->title}}</a>
                         </div>
