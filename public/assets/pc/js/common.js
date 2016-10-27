@@ -389,6 +389,7 @@ function showDetail(e) {
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
         $('.idQc').attr('src', json.data.qrcode_url);
+        $('.idVoteBtn').html(json.data.vote_num)
 
 	    $('.loadingBg').show();
 	    $('.imgDetail').show();

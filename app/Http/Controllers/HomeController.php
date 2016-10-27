@@ -55,6 +55,7 @@ class HomeController extends Controller
                 'title'=>$work->title,
                 'child_name'=>$work->child_name,
                 'introduction'=>$work->introduction,
+                'vote_num'=>$work->like_num+$work->employees_like_num,
                 'img_url'=>asset('uploads/photo/'.$work->img_path),
                 'qrcode_url'=>asset('uploads/qrcodes/'.$work->id.'.png')
             ]
