@@ -18,11 +18,11 @@
         <!-- first/previous -->
         @if($paginator->currentPage() > 1)
 
-                <a href="{{ $paginator->url(1) }}" aria-label="First">
+                <a href="{{ $paginator->url(1) }}" aria-label="First"  class="sBtn">
                     <span aria-hidden="true">首页</span>
                 </a>
 
-                <a href="{{ $paginator->url($paginator->currentPage() - 1) }}" aria-label="Previous">
+                <a href="{{ $paginator->url($paginator->currentPage() - 1) }}" class="sBtn" aria-label="Previous">
                     <span aria-hidden="true">上一页</span>
                 </a>
 
@@ -40,10 +40,10 @@
 
         <!-- next/last -->
         @if($paginator->currentPage() < $paginator->lastPage())
-                <a href="{{ $paginator->url($paginator->currentPage() + 1) }}" aria-label="Next">
+                <a href="{{ $paginator->url($paginator->currentPage() + 1) }}" class="sBtn" aria-label="Next">
                     <span aria-hidden="true">下一页</span>
                 </a>
-                <a href="{{ $paginator->url($paginator->lastpage()) }}" aria-label="Last">
+                <a href="{{ $paginator->url($paginator->lastpage()) }}" class="sBtn" aria-label="Last">
                     <span aria-hidden="true">尾页</span>
                 </a>
         @endif

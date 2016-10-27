@@ -41,9 +41,14 @@ class MobileController extends Controller
     }
     public function workList(Request $request)
     {
-        $model = App\Work::offset(0)->limit(20);
+        $model = App\Work::offset(0)->limit(10);
         if( null != $request->get('key') ){
-            $model->where('title','like', '%'.urlencode($request->get('key')).'%');
+            $model->where(function($query) use ($request)
+            {
+                $query->orWhere('title','like', '%'.urlencode($request->get('key')).'%')
+                      ->orWhere('child_name','like', '%'.urlencode($request->get('key')).'%')
+                      ->orWhere('mobile','like', '%'.urlencode($request->get('key')).'%');
+            });
         }
         if( 'num' != $request->get('order') ){
             $model->orderBy('created_at', 'DESC');
