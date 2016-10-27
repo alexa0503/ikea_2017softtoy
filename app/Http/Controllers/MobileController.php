@@ -39,9 +39,13 @@ class MobileController extends Controller
         ];
         return $result;
     }
-    public function workList(Request $request)
+    public function workList()
     {
-        $model = App\Work::offset(0)->limit(10);
+        return view('mobile/list');
+    }
+    public function works(Request $request)
+    {
+        $model = App\Work::whereNotNull('title');
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {
@@ -49,6 +53,7 @@ class MobileController extends Controller
                       ->orWhere('child_name','like', '%'.urlencode($request->get('key')).'%')
                       ->orWhere('mobile','like', '%'.urlencode($request->get('key')).'%');
             });
+            //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
         if( 'num' != $request->get('order') ){
             $model->orderBy('created_at', 'DESC');
@@ -56,8 +61,9 @@ class MobileController extends Controller
         else{
             $model->orderBy('like_num', 'DESC');
         }
-        $works = $model->get();
-        return view('mobile/list',['works'=>$works]);
+        $works = $model->paginate(10);
+        $works->setPath('list?order='.$request->get('order').'&key='.$request->get('key'));
+        return view('mobile/works', ['works'=>$works]);
     }
     public function login()
     {

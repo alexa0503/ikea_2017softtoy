@@ -25,17 +25,7 @@
 
                 <div class="imagesList">
                 	<div class="innerDiv">
-						@foreach ($works as $work)
-                    	<div class="ilInit" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}">
-                            <div class="innerDiv">
-                                <img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
-                                <a class="abs iCover"><img src="{{asset('assets/mobile/images/page10Img3.png')}}"></a>
-                                <a class="abs ilVote">{{$work->like_num+$work->employees_like_num}}</a>
-                                <a class="abs ilName">{{$work->user->nick_name}}</a>
-                                <a class="abs ilTitle">{{$work->title}}</a>
-                            </div>
-                        </div>
-						@endforeach
+
                     </div>
 
                 	<div class="clear"></div>
@@ -79,13 +69,14 @@ $(function(){
 	$('.listSearchBtn').on('click', function(){
 		$('#search_form').submit();
 	})
+	loadListImg("{{url('mobile/works')}}");
 })
 
 window.onscroll = function(){
     var t = document.documentElement.scrollTop || document.body.scrollTop;  //离上方的距离
     var h =window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; //可见宽度
     if( t >= document.documentElement.scrollHeight -h -100 ) {
-        loadListImg();
+        loadListImg("{{url('mobile/works')}}");
     }
 }
 </script>

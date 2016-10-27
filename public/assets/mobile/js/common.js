@@ -605,16 +605,19 @@ function showLice() {
 }
 
 var loadListImgLock = true;
+var page = 1;
 
-function loadListImg() {
+function loadListImg(url) {
     if (loadListImgLock) {
         loadListImgLock = false;
         //ajax请求数据
+        $.get(url,{page:page},function(html){
+            $('.imagesList .innerDiv').append(html);
+            if(html != ''){
+                loadListImgLock = true; //请求成功或者失败都解锁 如果没有数据了则不用解锁
+                ++page;
+            }
 
-        //成功绑定
-        var liHtml = '<div class="ilInit" onClick="showDetail(this);" iid=""><div class="innerDiv"><img src="images/upload/img1.png" class="abs iImg"><a class="abs iCover"><img src="images/page10Img3.png"></a><a class="abs ilVote">999999</a><a class="abs ilName">作者名字</a><a class="abs ilTitle">一二三四五六七八九十</a></div></div>'; //模拟 请求到的数据
-        liHtml += '<div class="ilInit" ontouchend="showDetail(this);" onMouseDown="showDetail(this);" iid=""><div class="innerDiv"><img src="images/upload/img1.png" class="abs iImg"><a class="abs iCover"><img src="images/page10Img3.png"></a><a class="abs ilVote">999999</a><a class="abs ilName">作者名字</a><a class="abs ilTitle">一二三四五六七八九十</a></div></div>';
-        $('.imagesList .innerDiv').append(liHtml);
-        loadListImgLock = true; //请求成功或者失败都解锁 如果没有数据了则不用解锁
+        });
     }
 }
