@@ -19,6 +19,10 @@ class MobileController extends Controller
     }
     public function index()
     {
+        $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
+        if( null != $work){
+            return redirect(url('mobile/my'));
+        }
         return view('mobile/index');
     }
     public function work(Request $request,$id)
@@ -75,7 +79,6 @@ class MobileController extends Controller
             return ['ret'=>0];
         }
         return ['ret'=>1000,'msg'=>'登录失败，请检查你的帐号是否正确'];
-        //var_dump($response);
     }
     public function my()
     {
@@ -153,7 +156,7 @@ class MobileController extends Controller
         $work->comment = null;
         $work->expect = null;
         $work->save();
-        \QrCode::format('png')->size(600)->generate(url('mobile/work', ['id'=>$work->id]),public_path('uploads/qrcodes/'.$work->id.'.png'));
+        \QrCode::format('png')->size(600)->generate(url('mobile/share', ['id'=>$work->id]),public_path('uploads/qrcodes/'.$work->id.'.png'));
         return ['ret'=>0,'msg'=>'','url'=>url('mobile/success')];
     }
 }
