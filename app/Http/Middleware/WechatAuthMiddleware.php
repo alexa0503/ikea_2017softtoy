@@ -25,7 +25,7 @@ class WechatAuthMiddleware
             \Session::set('wechat.headimg', $wechat_user->head_img);
         }
         if( null == $request->session()->get('wechat.id') ){
-            return redirect('/wechat/auth');
+            return redirect('wechat/auth');
         }
         return $next($request);
     }

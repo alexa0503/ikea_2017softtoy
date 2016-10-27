@@ -30,7 +30,7 @@ class WechatController extends Controller
             $code = $request->get('code');
             $url = 'http://ikea.aitoy.com/wx/api/server/oauth2/getuser.json?code='.$code;
             $data = json_decode(\App\Helper\HttpClient::get($url));
-            if( null != $data && $data->success == false ){
+            if( null != $data ){
                 $openid = $data->obj->openid;
                 $nick_name = '';
                 $head_img = '';

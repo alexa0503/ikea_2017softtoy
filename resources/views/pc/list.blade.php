@@ -28,9 +28,9 @@
                 	<div class="clear"></div>
                 </div>
 
-                <div class="listNav">
-					{!! $works->links() !!}
-                	<!--<a href="javascript:void(0);" class="sBtn">首页</a>
+				@include('pc.pagination', ['paginator' => $works, 'interval' => 5])
+                <!--<div class="listNav">
+                	<a href="javascript:void(0);" class="sBtn">首页</a>
 
                     <a href="javascript:void(0);" class="sBtn">上一页</a>
 
@@ -46,8 +46,8 @@
 
                     <a href="javascript:void(0);" class="sBtn">下一页</a>
 
-                    <a href="javascript:void(0);" class="sBtn">尾页</a>-->
-                </div>
+                    <a href="javascript:void(0);" class="sBtn">尾页</a>
+                </div>-->
 
                 <div class="nav nav1">
 					<ul>
