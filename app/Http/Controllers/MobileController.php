@@ -54,6 +54,9 @@ class MobileController extends Controller
         $work_like->user_id = Session::get('wechat.id');
         $work_like->work_id = $id;
         $work_like->save();
+        $work = App\Work::find($id);
+        $work->like_num += 1;
+        $work->save();
         return ['ret'=>0];
     }
     public function workList()
