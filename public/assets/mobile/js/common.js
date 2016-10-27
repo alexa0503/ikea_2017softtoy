@@ -548,16 +548,22 @@ function submitImageInfo() {
 }
 
 function voteId(e) {
-    var canVote = false; //是否可以投票
-    if (canVote) {
-        var idv = parseInt($(e).html());
-        idv++;
-        $(e).html(idv);
-        $('.idVoteBtn').addClass('idVoteBtnEd');
-    } else {
-        $('.noVoteBg').show();
-        $('.noVote').show();
-    }
+    var url = $('.idVoteBtn').attr('data-url');
+    $.getJSON(url,function(json){
+        if(json.ret == 0){
+            var idv = parseInt($(e).html());
+            idv++;
+            $(e).html(idv);
+            $('.idVoteBtn').addClass('idVoteBtnEd');
+        }
+        else{
+            $('.noVoteBg').show();
+            $('.noVote').show();
+        }
+    }).fail(function(){
+        alert('抱歉，请求失败~');
+    })
+
 }
 
 function closeNoVote() {
@@ -575,9 +581,11 @@ function showDetail(e) {
     $.getJSON(url,function(json){
         $('.popBg').show();
         $('.idImg').attr('src',json.data.img_url)
+        $('.idVoteBtn').attr('data-url',json.data.vote_url)
         $('.idName').html(json.data.child_name);
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
+        workId = json.data.id;
         //$(window).scrollTop(0);
         $('.imgDetail').show();
     }).fail(function(){

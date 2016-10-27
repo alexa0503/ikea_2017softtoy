@@ -35,9 +35,26 @@ class MobileController extends Controller
                 'child_name'=>$work->child_name,
                 'introduction'=>$work->introduction,
                 'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
+                'vote_url'=>url('mobile/vote',['id'=>$work->id]),
             ]
         ];
         return $result;
+    }
+    public function vote(Request $request, $id)
+    {
+        $count1 = App\WorkLike::where('user_id', Session::get('wechat.id'))->count();
+        if($count1 > 10){
+            return ['ret'=>1001,'msg'=>'一天只能赞10次嗷'];
+        }
+        $count2 = App\WorkLike::where('user_id', Session::get('wechat.id'))->where('work_id', $id)->count();
+        if($count2 > 0){
+            return ['ret'=>1002,'msg'=>'您已经赞过啦'];
+        }
+        $work_like = new App\WorkLike;
+        $work_like->user_id = Session::get('wechat.id');
+        $work_like->work_id = $id;
+        $work_like->save();
+        return ['ret'=>0];
     }
     public function workList()
     {

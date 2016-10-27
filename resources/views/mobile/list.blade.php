@@ -54,7 +54,7 @@
         <div class="idTitle"></div>
         <div class="idDesc"></div>
         <a href="javascript:void(0);" class="abs idCloseBtn" onClick="closeDetail();"><img src="{{asset('assets/mobile/images/closeBtn.png')}}"></a>
-        <a href="javascript:void(0);" class="idVoteBtn" onClick="voteId(this);">0</a>
+        <a href="javascript:void(0);" class="idVoteBtn" data-url="" onClick="voteId(this);">0</a>
     </div>
 </div>
 <div class="noVoteBg" style="display:none;" onClick="closeNoVote();"></div>
