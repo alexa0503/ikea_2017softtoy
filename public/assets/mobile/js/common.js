@@ -508,6 +508,7 @@ function pointSel(e) {
     $('.pointSel').removeClass('pointSelon');
     $('.pointSel' + e).addClass('pointSelon');
     $('.pointSence').css('background-position', '0 ' + parseInt(e) * (-43) + 'px');
+    $('.degree').val(e);
 }
 
 function submitImageInfo() {
@@ -551,9 +552,11 @@ function voteId(e) {
     var url = $('.idVoteBtn').attr('data-url');
     $.getJSON(url,function(json){
         if(json.ret == 0){
+            console.log(obj);
             var idv = parseInt($(e).html());
             idv++;
             $(e).html(idv);
+            obj.find('.ilVote').html(idv);
             $('.idVoteBtn').addClass('idVoteBtnEd');
         }
         else{
@@ -575,8 +578,9 @@ function closeDetail() {
     $('.popBg').hide();
     $('.imgDetail').hide();
 }
-
+var obj;
 function showDetail(e) {
+    obj = $(e);
     var url = $(e).attr('data-url');
     $.getJSON(url,function(json){
         $('.popBg').show();

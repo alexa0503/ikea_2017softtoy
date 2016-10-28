@@ -11,8 +11,8 @@
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
-                <input type="text" class="uploadSucceedTxt uploadSucceedTxt1" maxlength="50" placeholder="限50个字以内">
-                <input type="text" class="uploadSucceedTxt uploadSucceedTxt2" maxlength="50" placeholder="限50个字以内">
+                <input type="text" class="uploadSucceedTxt uploadSucceedTxt1" maxlength="50" placeholder="限50个字以内" name="comment">
+                <input type="text" class="uploadSucceedTxt uploadSucceedTxt2" maxlength="50" placeholder="限50个字以内" name="expect">
 
                 <div class="pointSence"></div>
 
@@ -21,7 +21,7 @@
                 <a href="javascript:void(0);" class="pointSel pointSel3" onClick="pointSel(3);"><img src="{{asset('/assets/mobile/images/page6Img2.png')}}"></a>
                 <a href="javascript:void(0);" class="pointSel pointSel4" onClick="pointSel(4);"><img src="{{asset('/assets/mobile/images/page6Img2.png')}}"></a>
                 <a href="javascript:void(0);" class="pointSel pointSel5 pointSelon" onClick="pointSel(5);"><img src="{{asset('/assets/mobile/images/page6Img2.png')}}"></a>
-
+				<input type="hidden" name="degree" class="degree" value="0" />
                 <a href="#" class="abs uploadSucceedBtn" onClick="submitImageInfo();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
             </div>
         </div>

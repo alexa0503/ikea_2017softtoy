@@ -19,10 +19,6 @@ class MobileController extends Controller
     }
     public function index()
     {
-        $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
-        if( null != $work){
-            return redirect(url('mobile/my'));
-        }
         return view('mobile/index');
     }
     public function work(Request $request,$id)
@@ -141,6 +137,7 @@ class MobileController extends Controller
         $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
         $work->comment = $request->input('comment');
         $work->expect = $request->input('expect');
+        $work->degree = $request->input('degree');
         return ['ret'=>0,'msg'=>''];
     }
     public function upload()
