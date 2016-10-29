@@ -17,6 +17,10 @@ class MobileController extends Controller
         $this->middleware('web');
         $this->middleware('wechat.auth');
     }
+    public function review()
+    {
+        return view('mobile/review');
+    }
     public function index()
     {
         return view('mobile/index');

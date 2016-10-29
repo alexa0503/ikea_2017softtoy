@@ -4,7 +4,7 @@
 	<div class="innerDiv">
     	<div class="page page1">
         	<div class="innerDiv">
-            	<div class="page1Bg"></div>
+            	<div class="pageReview"></div>
 
                 <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
@@ -13,9 +13,6 @@
                 <a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
                 <a href="{{url('mobile/review')}}" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
-
-                <a href="{{url('mobile/login')}}" class="abs page1Btn1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
-                <a href="{{url('mobile/list')}}" class="abs page1Btn2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
             </div>
         </div>
     </div>

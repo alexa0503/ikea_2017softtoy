@@ -383,17 +383,17 @@ function closeDetail() {
 
 function showDetail(e) {
     var url = $(e).attr('data-url');
-    $.getJSON(url,function(json){
-        $('.idImg').attr('src',json.data.img_url)
+    $.getJSON(url, function(json) {
+        $('.idImg').attr('src', json.data.img_url)
         $('.idName').html(json.data.child_name);
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
         $('.idQc').attr('src', json.data.qrcode_url);
         $('.idVoteBtn').html(json.data.vote_num)
 
-	    $('.loadingBg').show();
-	    $('.imgDetail').show();
-    }).fail(function(){
+        $('.loadingBg').show();
+        $('.imgDetail').show();
+    }).fail(function() {
         alert('网络异常~');
     })
 }
@@ -401,4 +401,26 @@ function showDetail(e) {
 function closeNoVote() {
     $('.noteBg').hide();
     $('.noVote').hide();
+}
+
+function showRule() {
+    $('.loadingBg').show();
+    $('.rulePop').show();
+    $('#scrollbar').tinyscrollbar();
+}
+
+function closeRule() {
+    $('.loadingBg').hide();
+    $('.rulePop').hide();
+}
+
+function showLic() {
+    $('.loadingBg').show();
+    $('.licPop').show();
+    $('#scrollbar2').tinyscrollbar();
+}
+
+function closeLic() {
+    $('.loadingBg').hide();
+    $('.licPop').hide();
 }

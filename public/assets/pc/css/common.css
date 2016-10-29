@@ -52,7 +52,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .nav1 ul li.navBtn5{ width:136px; padding-right:51px;}
 .nav1 ul li.navBtn6{ width:124px; padding-right:0;}
 
-.page1Qc{ left:477px; top:441px;}
+.page1Qc{ left:476px; top:439px;}
 .page1Btn{ left:454px; top:549px;}
 
 .foot{ width:1060px; height:80px; background:#e1e1e1; margin:20px auto 0 auto;}
@@ -105,6 +105,27 @@ select,input,textarea{font-family:inherit; outline:none;}
 .loadingBar{ background:url(../images/page3Img3.png) 0 0 no-repeat; width:405px; height:40px; -webkit-transform-origin:0 0 0; -moz-transform-origin:0 0 0; -ms-transform-origin:0 0 0; transform-origin:0 0 0; position:absolute; left:58px; top:395px; -webkit-transform:scale(0.9,0.75); -moz-transform:scale(0.9,0.75); -ms-transform:scale(0.9,0.75); transform:scale(0.9,0.75);}
 .uploadPop2{ background:url(../images/page2Img1.png) 0 0 no-repeat; width:484px; height:504px; position:absolute; left:50%; top:87px; margin-left:-242px;}
 .uploadBtn5{ left:167px; top:360px;}
+
+.rulePop,.licPop{ position:absolute; width:852px; height:600px; left:50%; top:74px; margin-left:-426px; background:#FFF;}
+.ruleTitle{ width:790px; text-align:center; padding:55px 0 15px 0; border-bottom:1px dotted #555555; margin:0 auto 15px auto;}
+.ruleBlock{ width:790px; height:330px; margin:0 auto;}
+.ruleBottom{ width:790px; text-align:center; padding:0 0 15px 0; border-bottom:1px dotted #555555;  margin:15px auto 0 auto;}
+
+#scrollbar{ width:790px;}
+#scrollbar .viewport{ height:330px; overflow:hidden; position:relative; width:760px;}
+#scrollbar .overview{ left:0; list-style:none outside none; margin:0; padding:0; position:absolute; top:0;}
+#scrollbar .scrollbar{ background:none; float:right; position:relative; width:25px;}
+#scrollbar .track{ background:#231916; height:100%; position:relative; width:3px;}
+#scrollbar .thumb{ background:url(../images/scroll1.png) top center no-repeat; cursor: pointer; left:-11px; position:absolute; top:0; width:25px;}
+#scrollbar .end{ background:url(../images/scroll2.png) top center no-repeat; width:25px; height:27px; position:absolute; left:0; bottom:-17px;}
+
+#scrollbar2{ width:790px;}
+#scrollbar2 .viewport{ height:330px; overflow:hidden; position:relative; width:760px;}
+#scrollbar2 .overview{ left:0; list-style:none outside none; margin:0; padding:0; position:absolute; top:0;}
+#scrollbar2 .scrollbar{ background:none; float:right; position:relative; width:25px;}
+#scrollbar2 .track{ background:#231916; height:100%; position:relative; width:3px;}
+#scrollbar2 .thumb{ background:url(../images/scroll1.png) top center no-repeat; cursor: pointer; left:-11px; position:absolute; top:0; width:25px;}
+#scrollbar2 .end{ background:url(../images/scroll2.png) top center no-repeat; width:25px; height:27px; position:absolute; left:0; bottom:-17px;}
 
 .page4Bg{ background:url(../images/page4Bg.png) 0 0 no-repeat; width:1060px; height:704px;}
 .pointSel{ position:absolute; top:282px; opacity:0;}
@@ -170,5 +191,6 @@ select,input,textarea{font-family:inherit; outline:none;}
 .page8Bg{ background:url(../images/page8Bg.png) 0 0 no-repeat; width:1060px; height:704px;}
 .page8Btn{ left:460px; top:433px;}
 
-
+.pageReviewBg{ width:1060px; height:704px;}
+.reviewBlock{ position:absolute; left:17px; top:57px; width:1030px; height:525px; overflow-x:hidden; overflow-y:auto;}
 

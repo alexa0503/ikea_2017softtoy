@@ -12,12 +12,14 @@
 */
 Route::get('/', 'HomeController@index');
 Route::get('list', 'HomeController@workList');
+Route::get('review', 'HomeController@review');
 Route::get('winners', 'HomeController@winners');
 Route::get('work/{id}', 'HomeController@work');
 
 
 Route::get('mobile', 'MobileController@index');
 Route::get('mobile/index', 'MobileController@index');
+Route::get('mobile/review', 'MobileController@review');
 Route::get('mobile/list', 'MobileController@workList');
 Route::get('mobile/works', 'MobileController@works');
 Route::get('mobile/my', 'MobileController@my');

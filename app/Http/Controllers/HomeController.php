@@ -15,6 +15,10 @@ class HomeController extends Controller
     {
         return view('pc/index');
     }
+    public function review()
+    {
+        return view('pc/review');
+    }
     public function workList(Request $request)
     {
         $model = App\Work::whereNotNull('title');

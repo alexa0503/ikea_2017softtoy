@@ -55,8 +55,8 @@
                     	<li class="navBtn1"><a href="{{url('/')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn2"><a href="{{url('my')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn3"><a href="{{url('list')}}" class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn4"><a href="javascript:void(0);"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn5"><a href="javascript:void(0);"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn4"><a href="{{url('review')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn5"><a href="javascript:void(0);" onclick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn6"><a href="{{url('winners')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                     </ul>
                     <div class="clear"></div>
@@ -85,6 +85,7 @@
             	<a href="javascript:void(0);" class="abs noVoteBtn" onClick="closeNoVote();"><img src="{{asset('/assets/pc/images/space.gif')}}" width="145" height="75"></a>
             </div>
         </div>
+		@include('pc.rule')
     </div>
 </div>
 <script>
