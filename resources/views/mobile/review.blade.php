@@ -17,14 +17,4 @@
         </div>
     </div>
 </div>
-
-<div class="popBg" style="display:none;"></div>
-<div class="pop popRule" style="display:none;">
-	<div class="innerDiv">
-    	<div class="popRuleBlock">
-        	<img src="{{asset('/assets/mobile/images/rule.png')}}">
-        </div>
-        <a href="javascript:void(0);" class="abs ruleCloseBtn" onClick="closePop();"><img src="{{asset('/assets/mobile/images/closeBtn.png')}}"></a>
-    </div>
-</div>
 @endsection
