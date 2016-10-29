@@ -36,6 +36,7 @@
 
 <body>
     @yield('content')
+    @section('bkgDiv')
     <div class="popBg" style="display:none;"></div>
     <div class="pop popRule" style="display:none;">
     	<div class="innerDiv">
@@ -45,6 +46,7 @@
             <a href="javascript:void(0);" class="abs ruleCloseBtn" onClick="closePop();"><img src="{{asset('/assets/mobile/images/closeBtn.png')}}"></a>
         </div>
     </div>
+    @show
     <script>
     $(document).ready(function() {
         $.ajaxSetup({

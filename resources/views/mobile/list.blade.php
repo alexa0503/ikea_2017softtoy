@@ -81,3 +81,5 @@ window.onscroll = function(){
 }
 </script>
 @endsection
+@section('bkgDiv')
+@endsection
