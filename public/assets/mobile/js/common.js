@@ -590,6 +590,13 @@ function showDetail(e) {
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
         $('.idVoteBtn').html(json.data.vote_num);
+        if(json.data.has_vote == 1){
+            $('.idVoteBtn').addClass('idVoteBtnEd');
+        }
+        else{
+            $('.idVoteBtn').removeClass('idVoteBtnEd');
+        }
+
         workId = json.data.id;
         //$(window).scrollTop(0);
         $('.imgDetail').show();
@@ -623,8 +630,10 @@ var page = 1;
 function loadListImg(url) {
     if (loadListImgLock) {
         loadListImgLock = false;
+        var key = queryString('key');
+        var order = queryString('order');
         //ajax请求数据
-        $.get(url,{page:page},function(html){
+        $.get(url,{page:page,key:key,order:order},function(html){
             $('.imagesList .innerDiv').append(html);
             if(html != ''){
                 loadListImgLock = true; //请求成功或者失败都解锁 如果没有数据了则不用解锁

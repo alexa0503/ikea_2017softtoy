@@ -28,12 +28,14 @@ class MobileController extends Controller
     public function work(Request $request,$id)
     {
         $work = App\Work::find($id);
+        $count = App\WorkLike::where('user_id', Session::get('wechat.id'))->count();
         $result = [
             'ret' => 0,
             'data' => [
                 'title'=>$work->title,
                 'child_name'=>$work->child_name,
                 'introduction'=>$work->introduction,
+                'has_vote'=> $count == 0 ? 0 : 1,
                 'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
                 'vote_url'=>url('mobile/vote',['id'=>$work->id]),
                 'vote_num'=>$work->like_num+$work->employees_like_num,
@@ -70,9 +72,9 @@ class MobileController extends Controller
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {
-                $query->where('title','=', urlencode($request->get('key')))
-                      ->orWhere('child_name','=', urlencode($request->get('key')))
-                      ->orWhere('mobile','=', urlencode($request->get('key')));
+                $query->where('title','LIKE', '%'.urlencode($request->get('key')).'%')
+                      ->orWhere('child_name','LIKE', '%'.urlencode($request->get('key')).'%')
+                      ->orWhere('mobile','LIKE', '%'.urlencode($request->get('key')).'%');
             });
             //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
