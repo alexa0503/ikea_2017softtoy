@@ -25,9 +25,9 @@ class HomeController extends Controller
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {
-                $query->orWhere('title','like', '%'.urlencode($request->get('key')).'%')
-                      ->orWhere('child_name','like', '%'.urlencode($request->get('key')).'%')
-                      ->orWhere('mobile','like', '%'.urlencode($request->get('key')).'%');
+                $query->where('title','=', urlencode($request->get('key')))
+                      ->orWhere('child_name','=', urlencode($request->get('key')))
+                      ->orWhere('mobile','=', urlencode($request->get('key')));
             });
             //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
