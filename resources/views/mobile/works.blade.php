@@ -4,7 +4,7 @@
         <img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
         <a class="abs iCover"><img src="{{asset('assets/mobile/images/page10Img3.png')}}"></a>
         <a class="abs ilVote">{{$work->like_num+$work->employees_like_num}}</a>
-        <a class="abs ilName">{{$work->user->nick_name}}</a>
+        <a class="abs ilName">{{$work->user->child_name}}</a>
         <a class="abs ilTitle">{{$work->title}}</a>
     </div>
 </div>

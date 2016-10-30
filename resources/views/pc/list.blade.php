@@ -21,7 +21,7 @@
                     	<div class="innerDiv">
                         	<img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('work',['id'=>$work->id])}}" class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
-                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilName">{{$work->user->name}}</a>
+                            <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilName">{{$work->child_name}}</a>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilTitle">{{$work->title}}</a>
                         </div>
                     </div>
@@ -85,7 +85,32 @@
             	<a href="javascript:void(0);" class="abs noVoteBtn" onClick="closeNoVote();"><img src="{{asset('/assets/pc/images/space.gif')}}" width="145" height="75"></a>
             </div>
         </div>
-		@include('pc.rule')
+		<div class="rulePop" style="display:none;">
+		    <div class="innerDiv">
+		        <div class="ruleTitle"><img src="{{asset('/assets/pc/images/ruleTitle.png')}}"></div>
+		        <div class="ruleBlock">
+		            <div class="innerDiv">
+		                <div id="scrollbar">
+		                    <div class="scrollbar">
+		                        <div class="track">
+		                            <div class="thumb">
+		                                <div class="end"></div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="viewport">
+		                        <div class="overview">
+		                            <img src="{{asset('/assets/pc/images/rule.png')}}">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="ruleBottom">
+		            <a href="javascript:void(0);" onClick="closeRule();"><img src="{{asset('/assets/pc/images/closeBtn.jpg')}}"></a>
+		        </div>
+		    </div>
+		</div>
     </div>
 </div>
 <script>

@@ -70,7 +70,8 @@ class MobileController extends Controller
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {
-                $query->orWhere('title','like', '%'.urlencode($request->get('key')).'%')
+                var_dump($request->get('key'));
+                $query->where('title','like', '%'.urlencode($request->get('key')).'%')
                       ->orWhere('child_name','like', '%'.urlencode($request->get('key')).'%')
                       ->orWhere('mobile','like', '%'.urlencode($request->get('key')).'%');
             });
