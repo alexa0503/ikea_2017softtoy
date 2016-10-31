@@ -168,7 +168,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .listSearchBtn{ left:950px; top:122px;}
 .imagesList{ position:absolute; left:82px; top:179px; width:930px; height:400px; overflow:hidden;}
 .ilInit{ width:185px; height:194px; float:left; overflow:hidden;}
-.iImg{ left:10px; top:1px; width:164px; height:108px;}
+.iOuter{ position:absolute; left:10px; top:1px; width:164px; height:108px; overflow:hidden;}
+.iImg{ width:164px; height:auto;}
 .iCover{ left:0; top:0;}
 .ilName{ color:#000; font-size:12px; font-weight:bolder; left:8px; top:129px; line-height:100%;}
 .ilTitle{ color:#000; font-size:12px; font-weight:bolder; left:8px; top:158px; line-height:100%;}
