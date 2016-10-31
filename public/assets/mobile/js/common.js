@@ -459,7 +459,7 @@ function submitImages() {
                     $('.loadingTxt span').html(rt);
                     $('.loadingBar').css('background-position', '0 -80px');
                     uploadTimeout4 = setTimeout(function() {
-                        $('.loadingTxt span').html('100');
+                        $('.loadingTxt span').html('99');
                         $('.loadingBar').css('background-position', '0 -120px');
                     }, 500);
                 }, 700);
