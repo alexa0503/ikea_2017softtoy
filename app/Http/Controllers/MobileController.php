@@ -122,9 +122,9 @@ class MobileController extends Controller
         }
         return view('mobile/my',['work'=>$work]);
     }
-    public function share()
+    public function share(Request $request,$id)
     {
-        $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
+        $work = App\Work::find($id);
         if( null == $work){
             return redirect(url('mobile/index'));
         }

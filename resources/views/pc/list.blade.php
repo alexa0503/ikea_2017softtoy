@@ -7,8 +7,8 @@
             	<div class="page7Bg"></div>
 				<form method="get" action="{{url('list')}}" id="search_form">
 					<select class="listSel" name="order">
-						<option value="time" {{ request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
-	                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
+						<option value="time" {{ Request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
+	                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
 	                </select>
 
                 	<input type="text" class="listSearchTxt" value="{{Request::get('key')}}" name="key" placeholder="搜索/SEARCH">
