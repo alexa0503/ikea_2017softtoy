@@ -136,7 +136,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .listSearchBtn{ left:545px; top:316px;}
 .imagesList{ width:600px; height:auto; background:#FFF; padding:0 20px;}
 .ilInit{ width:300px; height:260px; float:left; overflow:hidden;}
-.iImg{ left:12px; top:33px; width:271px; height:179px;}
+.iImg{ left:12px; top:33px; width:271px; height:auto;/*179px*/}
 .iCover{ left:12px; top:33px;}
 .ilName{ color:#000; font-size:14px; font-weight:bolder; left:206px; top:219px; line-height:100%;}
 .ilTitle{ color:#000; font-size:14px; font-weight:bolder; left:155px; top:239px; line-height:100%;}
