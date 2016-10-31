@@ -11,7 +11,7 @@
                 <a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
                 <a href="javascript:void(0);" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
-                <a href="#" class="abs regBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="398" height="36"></a>
+                <a href="https://yijia.acxiom.com.cn/irw/" class="abs regBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="398" height="36"></a>
 
                 <input type="tel" class="abs loginTxt loginTxt1" maxlength="11">
                 <input type="text" class="abs loginTxt loginTxt2">
@@ -30,18 +30,18 @@
             <p><strong>活动对象：</strong>所有在宜家中国注册的会员，他们未满12周岁的子女均可参与（包括新注册的会员）<br>
             <strong>活动时间：</strong>2016年11月7日-14日<br>
             <strong>参与商场：</strong>中国地区的21家宜家商场</p>
-            
+
             <h2>活动参与方式及流程：</h2>
             <p><strong>第一步：</strong>微信关注“宜家俱乐部”或登录宜家中国官方网站，填写、更新并确认会员信息后，系统会自动跳转到活动页面<br>
             <strong>第二步：</strong>上传您孩子的画作，填写完整作品信息，并且用一句话概括作品最突出的地方<br>
             <strong>第三步：</strong>告诉我们您对本次活动的评价和建议<br>
             <strong>第四步：</strong>提交画作，等待照片审核（审核所需时间不超过画作提交后的24小时）</p>
-            
+
             <h2>上传作品规则：</h2>
             <p><strong>1. </strong>每位会员只能上传一张画作，并且请确保您拥有上传的画作的版权和所有权<br>
             <strong>2. </strong>照片的内容必须是可以做成毛绒玩具的手绘画作<br>
             <strong>3. </strong>宜家有权自行删除与本次活动无关、违反法律法规或侵犯第三方权益的照片</p>
-            
+
             <h2>评选流程与规则：</h2>
             <p><strong>1. 第一阶段：</strong><br>
             2016年11月7日-14日，采用面向公众的网络公开投票，本次活动所有参与者均可以通过活动页面为所有作品进行投票，每人(WeChat ID)每天限投10票（这10票不可重复投给某一幅画作），参赛作品的得票数将按40%的权重计分，并计入总得分<br>
@@ -55,7 +55,7 @@
             <strong>4. </strong>2016年11月25日，前20名优胜作品将于官网活动页面公布<br>
             <strong>5. </strong>2016年12月1日，宜家（中国）将优胜的20幅作品提交至瑞典总部，并在官方微信公布结果<br>
             <strong>6. </strong>2017年3月1日，宜家将公布全球Top 10的作品，并在官方微信和官网公布结果</p>
-            
+
             <h2>奖品：</h2>
             <p><strong>1. </strong>每位参与活动的小朋友都将获得一份玩乐小达人证书<br>
             <strong>2. </strong>宜家设计师将从所有参赛画作中，选择20幅绘画作品。这20位小朋友可额外获得：<br>
@@ -64,7 +64,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;c. 作品被送至宜家瑞典总部，参与全球前10个优胜大奖的角逐<br>
             &nbsp;&nbsp;&nbsp;&nbsp;d.	宜家将以画作作者的名义向UNICEF（联合国儿童基金会）进行捐赠，每一幅画捐赠1欧元<br>
             &nbsp;&nbsp;&nbsp;&nbsp;e.	获得全球前10的优胜作品，会在2017年成为宜家限量版毛绒玩具在全球各宜家商场进行销售。并在投票结果公布后约2个月送至作者手中。</p>
-            
+
             <h2>注意事项：</h2>
             <p><strong>1. </strong>宜家和任何宜家特许经营公司出于宣传目的希望通过网站及其他媒体渠道公布所有参与者的姓名、年龄和参赛作品（画作）。参选即表明参与者及其父母/监护人同意按前述方式使用此类信息，无须征得进一步的同意、通知或补偿。<br>
             <strong>2. </strong>宜家希望根据 10 位国际获奖者的征集活动作品（画作）进行新产品的设计，并且按照此类设计制造限量的产品，在所有宜家特许经营门店以及网店销售（商业使用）。每销售一件此类限量毛绒玩具产品，宜家基金会 (IKEA Foundation) 将向由其自行选定的慈善团体捐赠 1 欧元，为有需要的儿童提供帮助。参选即表明参与者及其父母/监护人同意按前述方式使用此类信息，无须征得进一步的同意、通知或补偿。<br>

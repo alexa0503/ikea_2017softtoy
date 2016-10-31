@@ -148,6 +148,9 @@ class MobileController extends Controller
     }
     public function upload()
     {
+        if( Session::get('wechat.mobile') == null ){
+            return redirect(url('mobile/login'));
+        }
         $count = App\Work::where('user_id', Session::get('wechat.id'))->count();
         if($count > 0){
             return redirect(url('mobile/my'));
