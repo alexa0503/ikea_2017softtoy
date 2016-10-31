@@ -7,8 +7,8 @@
             	<div class="page7Bg"></div>
 				<form method="get" action="{{url('list')}}" id="search_form">
 					<select class="listSel" name="order">
-						<option value="time" {{ Request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
-	                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
+						<option value="time" {{ request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
+	                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
 	                </select>
 
                 	<input type="text" class="listSearchTxt" value="{{Request::get('key')}}" name="key" placeholder="搜索/SEARCH">
@@ -19,7 +19,9 @@
 					@foreach ($works as $work)
                 	<div class="ilInit">
                     	<div class="innerDiv">
-                        	<img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
+                        	<div class="iOuter">
+                            	<img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="iImg">
+                            </div>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('work',['id'=>$work->id])}}" class="abs iCover"><img src="{{asset('/assets/pc/images/page7Img1.png')}}"></a>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilName">{{$work->child_name}}</a>
                             <a href="javascript:void(0);" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}" class="abs ilTitle">{{$work->title}}</a>
@@ -56,7 +58,7 @@
                         <li class="navBtn2"><a href="{{url('my')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn3"><a href="{{url('list')}}" class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn4"><a href="{{url('review')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn5"><a href="javascript:void(0);" onclick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn5"><a href="javascript:void(0);" onClick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn6"><a href="{{url('winners')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                     </ul>
                     <div class="clear"></div>
