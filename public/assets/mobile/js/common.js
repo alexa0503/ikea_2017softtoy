@@ -86,32 +86,36 @@ function loginAction2() {
 var uy, um, ud;
 
 function YYYYMMDDstart() {
+
     MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     //先给年下拉框赋内容
     uy = new Date().getFullYear();
     um = new Date().getMonth() + 1;
     ud = new Date().getDate();
-    for (var i = (uy - 60); i < (uy + 1); i++) //以今年为准，前60年，后0年
-        document.reg_testdate.YYYY.options.add(new Option(i + "年", i));
+    uy = 2016;
+    um = 11;
+    ud = 14;
+    for (var i = (uy - 12); i < (uy + 1); i++) //以今年为准，前60年，后0年
+        document.upload.year.options.add(new Option(i + "年", i));
     //赋月份的下拉框
     for (var i = 1; i < 13; i++) {
         if (um >= i) {
-            document.reg_testdate.MM.options.add(new Option(i + "月", i));
+            document.upload.month.options.add(new Option(i + "月", i));
         }
     }
-    document.reg_testdate.YYYY.value = uy;
-    document.reg_testdate.MM.value = new Date().getMonth() + 1;
+    document.upload.year.value = uy;
+    document.upload.month.value = new Date().getMonth() + 1;
     var n = MonHead[new Date().getMonth()];
     if (new Date().getMonth() == 1 && IsPinYear(YYYYvalue)) n++;
     writeDay(n); //赋日期下拉框Author:meizz
-    document.reg_testdate.DD.value = new Date().getDate();
+    document.upload.day.value = new Date().getDate();
 }
 
 function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)
 {
-    var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+    var MMvalue = document.upload.month.options[document.upload.month.selectedIndex].value;
     if (MMvalue == "") {
-        var e = document.reg_testdate.DD;
+        var e = document.upload.day;
         optionsClear(e);
         return;
     }
@@ -123,23 +127,23 @@ function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰�
 
 
     //赋月份的下拉框
-    var em = document.reg_testdate.MM;
+    var em = document.upload.month;
     optionsClear(em);
     for (var i = 1; i < 13; i++) {
         if ($.trim($('.uploadSel1').val()) == uy && um == i) {
-            document.reg_testdate.MM.options.add(new Option(i + "月", i));
+            document.upload.month.options.add(new Option(i + "月", i));
             return;
         } else {
-            document.reg_testdate.MM.options.add(new Option(i + "月", i));
+            document.upload.month.options.add(new Option(i + "月", i));
         }
     }
 }
 
 function MMDD(str) //月发生变化时日期联动
 {
-    var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+    var YYYYvalue = document.upload.year.options[document.upload.year.selectedIndex].value;
     if (YYYYvalue == "") {
-        var e = document.reg_testdate.DD;
+        var e = document.upload.day;
         optionsClear(e);
         return;
     }
@@ -150,7 +154,7 @@ function MMDD(str) //月发生变化时日期联动
 
 function writeDay(n) //据条件写日期的下拉框
 {
-    var e = document.reg_testdate.DD;
+    var e = document.upload.day;
     optionsClear(e);
     for (var i = 1; i < (n + 1); i++)
         if ($.trim($('.uploadSel1').val()) == uy && $.trim($('.uploadSel2').val()) == um && i > ud) {

@@ -1,6 +1,6 @@
 @extends('mobile.layout')
 @section('content')
-<form action="{{url('mobile/upload')}}" method="post" id="form" onsubmit="return false;">
+<form action="{{url('mobile/upload')}}" name="upload" method="post" id="form" onsubmit="return false;">
 <div class="bg">
 	<div class="innerDiv">
     	<div class="page page3">
@@ -34,26 +34,17 @@
 
             	<a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
-        		<input type="text" class="abs uploadTxt uploadTxt1" name="mobile" maxlength="11">
+        		<input type="tel" class="abs uploadTxt uploadTxt1" name="mobile" maxlength="11">
                 <input type="text" class="abs uploadTxt uploadTxt2" name="child_name" maxlength="20">
                 <div name="reg_testdate">
-                    <select class="uploadSel uploadSel1" name="year">
+                    <select class="uploadSel uploadSel1" name="year"  onChange="YYYYDD(this.value);">
                         <option value="">年</option>
-						@for ($i = 1980; $i <= 2016; $i++)
-						<option value="{{$i}}">{{$i}}年</option>
-						@endfor
                     </select>
-                    <select class="uploadSel uploadSel2" name="month">
+                    <select class="uploadSel uploadSel2" name="month"  onChange="MMDD(this.value)">
                         <option value="">月</option>
-						@for ($i = 1; $i <= 12; $i++)
-						<option value="{{$i}}">{{$i}}月</option>
-						@endfor
                     </select>
                     <select class="uploadSel uploadSel3" name="day">
                         <option value="">日</option>
-						@for ($i = 1; $i <= 31; $i++)
-						<option value="{{$i}}">{{$i}}日</option>
-						@endfor
                     </select>
                 </div>
 				<input type="hidden" name="gender" value="1" />
@@ -115,4 +106,9 @@
     </div>
 </div>
 </form>
+<script>
+$(function(){
+	YYYYMMDDstart();
+	})
+</script>
 @endsection

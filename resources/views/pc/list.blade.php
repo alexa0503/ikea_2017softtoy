@@ -74,7 +74,7 @@
                 <div class="idDesc"></div>
                 <img src="/assets/pc/images/page1Qc.jpg" class="abs idQc">
                 <a href="javascript:void(0);" class="abs idCloseBtn" onClick="closeDetail();"><img src="{{asset('/assets/pc/images/space.gif')}}" width="36" height="36"></a>
-                <a href="javascript:void(0);" class="idVoteBtn" onClick="voteId(this);"></a>
+                <a href="javascript:void(0);" class="idVoteBtn"></a>
             </div>
         </div>
         <img src="{{asset('/assets/pc/images/loading.gif')}}" width="60" height="60" class="abs loadingImg" style="display:none;">
