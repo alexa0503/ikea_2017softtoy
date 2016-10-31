@@ -15,8 +15,8 @@
 
 				<form method="get" action="{{url('mobile/list')}}" id="search_form">
                 <select class="listSel" name="order">
-                	<option value="time" {{ Request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
-                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
+                	<option value="time" {{ request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间</option>
+                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数</option>
                 </select>
 
                 <input type="text" name="key" class="listSearchTxt" value="{{Request::get('key')}}" placeholder="搜索/SEARCH">
@@ -48,8 +48,10 @@
 </div>
 <div class="pop imgDetail" style="display:none; z-index:999;">
     <div class="innerDiv">
-        <img src="{{asset('assets/mobile/images/upload/img1.png')}}" class="abs idImg">
-        <img src="" class="abs idCover">
+    	<div class="idOuter">
+        	<img src="" class="idImg">
+        </div>
+        <img src="{{asset('assets/mobile/images/upload/page9Img3.png')}}" class="abs idCover">
         <div class="idName"></div>
         <div class="idTitle"></div>
         <div class="idDesc"></div>

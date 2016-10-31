@@ -145,7 +145,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .page7BgB{ background:url(../images/page11Img1.png) 0 0 no-repeat; width:640px; height:315px;}
 
 .imgDetail{ background:url(../images/page9Img1.png) 0 0 no-repeat; width:574px; height:944px; position:fixed; left:50%; top:50%; margin:-472px 0 0 -287px;}
-.idImg{ width:525px; height:346px; left:24px; top:174px;}
+.idOuter{ width:525px; height:346px; left:24px; top:174px; position:absolute;}
+.idImg{ width:525px; height:auto;/* left:24px; top:174px;*/}
 .idCover{ left:24px; top:174px;}
 .idName{ font-size:18px; font-weight:bolder; color:#000; position:absolute; right:25px; top:556px; line-height:100%; text-align:right;}
 .idTitle{ font-size:18px; font-weight:bolder; color:#000; position:absolute; right:25px; top:602px; line-height:100%; text-align:right;}
