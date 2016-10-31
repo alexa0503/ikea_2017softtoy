@@ -120,6 +120,9 @@ $(function(){
 	$('.listSearchBtn').on('click', function(){
 		$('#search_form').submit();
 	})
+	$('.listSel').on('change', function(){
+		$('#search_form').submit();
+	})
 })
 
 </script>
