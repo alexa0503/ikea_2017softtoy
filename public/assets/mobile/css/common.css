@@ -33,7 +33,9 @@ select,input,textarea{font-family:inherit; outline:none;}
 
 .popBg,.noVoteBg{ width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8;}
 .popRule{ background:url(../images/ruleBg.png) 0 0 no-repeat; width:574px; height:944px; position:fixed; left:50%; top:50%; margin:-472px 0 0 -287px;}
-.popRuleBlock{ position:absolute; left:51px; top:185px; width:490px; height:705px; overflow-x:hidden; overflow-y:auto;}
+.popRuleBlock{ position:absolute; left:51px; top:185px; width:480px; height:705px; overflow-x:hidden; overflow-y:auto;}
+.popRuleBlock h2{ font-size:30px; font-weight:bold; line-height:100%; padding-bottom:20px;}
+.popRuleBlock p{ font-size:24px; line-height:36px; padding-bottom:40px;}
 .ruleCloseBtn{ right:6px; top:8px;}
 
 

@@ -15,8 +15,8 @@
 
 				<form method="get" action="{{url('mobile/list')}}" id="search_form">
                 <select class="listSel" name="order">
-                	<option value="time" {{ Request::get('order') != 'num' ? '' : 'selected="selected"'}}>按时间</option>
-                    <option value="num" {{ Request::get('order') == 'num' ? '' : 'selected="selected"'}}>按点赞数</option>
+                	<option value="time" {{ request::get('order') != 'num' ? '' : 'selected="selected"'}}>按时间</option>
+                    <option value="num" {{ request::get('order') == 'num' ? '' : 'selected="selected"'}}>按点赞数</option>
                 </select>
 
                 <input type="text" name="key" class="listSearchTxt" value="{{Request::get('key')}}" placeholder="搜索/SEARCH">
@@ -38,7 +38,7 @@
 </div>
 
 <div class="popBg" style="display:none;"></div>
-<div class="pop popRule" style="display:none;">
+<div class="pop popRule" style="display:none; z-index:999;">
 	<div class="innerDiv">
     	<div class="popRuleBlock">
         	<img src="{{asset('assets/mobile/images/rule.png')}}">
@@ -46,7 +46,7 @@
         <a href="javascript:void(0);" class="abs ruleCloseBtn" onClick="closePop();"><img src="{{asset('assets/mobile/images/closeBtn.png')}}"></a>
     </div>
 </div>
-<div class="pop imgDetail" style="display:none;">
+<div class="pop imgDetail" style="display:none; z-index:999;">
     <div class="innerDiv">
         <img src="{{asset('assets/mobile/images/upload/img1.png')}}" class="abs idImg">
         <img src="" class="abs idCover">
@@ -57,8 +57,8 @@
         <a href="javascript:void(0);" class="idVoteBtn" data-url="" onClick="voteId(this);"></a>
     </div>
 </div>
-<div class="noVoteBg" style="display:none;" onClick="closeNoVote();"></div>
-<div class="pop noVote" style="display:none;">
+<div class="noVoteBg" style="display:none; z-index:999;" onClick="closeNoVote();"></div>
+<div class="pop noVote" style="display:none; z-index:999;">
     <div class="innerDiv">
         <img src="{{asset('assets/mobile/images/page9Img4.png')}}" onClick="closeNoVote();">
     </div>
