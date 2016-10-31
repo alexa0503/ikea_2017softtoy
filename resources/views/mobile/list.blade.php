@@ -51,7 +51,7 @@
     	<div class="idOuter">
         	<img src="" class="idImg">
         </div>
-        <img src="{{asset('assets/mobile/images/upload/page9Img3.png')}}" class="abs idCover">
+        <img src="{{asset('assets/mobile/images/page9Img3.png')}}" class="abs idCover">
         <div class="idName"></div>
         <div class="idTitle"></div>
         <div class="idDesc"></div>
