@@ -483,7 +483,7 @@ function submitImages() {
             error: function(xhr) {
                 $('.loadingBg').show();
                 $('.uploadPop2').show();
-                alert('上传失败~');
+                alert('网络错误,请重新尝试');
                 //var json = jQuery.parseJSON(xhr.responseText);
                 //alert(json.msg);
                 //console.log(json);
