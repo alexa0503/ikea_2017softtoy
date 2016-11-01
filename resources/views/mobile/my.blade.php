@@ -19,7 +19,7 @@
                         <img src="{{asset('/assets/mobile/images/page8Img3.png')}}" class="abs page8Img3">
                     </div>
                 </div>
-                <div class="myName">{{$work->user->nick_name}}</div>
+                <div class="myName">{{$work->child_name}}</div>
                 <div class="myImageTitle">{{$work->title}}</div>
                 <div class="myImageDesc">{{$work->introduction}}</div>
 

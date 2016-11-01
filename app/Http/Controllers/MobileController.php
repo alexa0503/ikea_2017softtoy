@@ -19,7 +19,9 @@ class MobileController extends Controller
     }
     public function img()
     {
+        phpinfo();
         $image = Image::make(public_path('uploads/photo/IMG_0427.JPG'));
+        var_dump($image);
         return;
     }
     public function review()
