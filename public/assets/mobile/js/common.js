@@ -561,7 +561,9 @@ function voteId(e) {
             var idv = parseInt($(e).html());
             idv++;
             $(e).html(idv);
-            obj.find('.ilVote').html(idv);
+            if(obj){
+                obj.find('.ilVote').html(idv);
+            }
             $('.idVoteBtn').addClass('idVoteBtnEd');
         }
         else{
