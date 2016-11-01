@@ -15,6 +15,8 @@ Route::get('list', 'HomeController@workList');
 Route::get('review', 'HomeController@review');
 Route::get('winners', 'HomeController@winners');
 Route::get('work/{id}', 'HomeController@work');
+Route::get('img', 'MobileController@img');
+
 
 
 Route::get('mobile', 'MobileController@index');

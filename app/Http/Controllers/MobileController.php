@@ -17,6 +17,11 @@ class MobileController extends Controller
         $this->middleware('web');
         $this->middleware('wechat.auth');
     }
+    public function img()
+    {
+        $image = Image::make(public_path('uploads/photo/IMG_0427.JPG'));
+        return;
+    }
     public function review()
     {
         return view('mobile/review');
@@ -163,6 +168,10 @@ class MobileController extends Controller
         if($count > 0){
             return ['ret'=>1001,'msg'=>'已经上传过照片了'];
         }
+        if ( !$request->hasFile('photo')) {
+            // && $request->file('photo')->getError() != 0
+            return ['ret'=>1002, 'msg'=> '图片上传失败，不能超过8M~'];
+        }
         $file_name = date('YmdHis').uniqid().'.'.$request->file('photo')->extension();
         $request->file('photo')->move(public_path('uploads/photo/'), $file_name);
         $image = Image::make(public_path('uploads/photo/').$file_name);
@@ -179,6 +188,7 @@ class MobileController extends Controller
             $constraint->aspectRatio();
         });
         $image->save(public_path('uploads/photo/thumb/').$file_name);
+
         $work = new App\Work;
         $work->user_id = Session::get('wechat.id');
         $work->birth_date = $request->input('year').'-'.$request->input('month').'-'.$request->input('day');
