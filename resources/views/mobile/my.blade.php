@@ -23,12 +23,18 @@
                 <div class="myImageTitle">{{$work->title}}</div>
                 <div class="myImageDesc">{{$work->introduction}}</div>
 
-                <a href="javascript:void(0);" class="myVoteBtn">{{$work->like_num+$work->employees_like_num}}</a>
+                <a href="javascript:void(0);" class="myVoteBtn" onclick="voteId(this)" data-url="{{url('mobile/vote',['id'=>$work->id])}}">{{$work->like_num+$work->employees_like_num}}</a>
             </div>
         </div>
 
         <div class="abs loadingBg" style="display:none;"></div>
         <img src="{{asset('/assets/mobile/images/loading.gif')}}" width="60" height="60" class="abs loadingImg" style="display:none;">
+    </div>
+</div>
+<div class="noVoteBg" style="display:none; z-index:999;" onClick="closeNoVote();"></div>
+<div class="pop noVote" style="display:none; z-index:999;">
+    <div class="innerDiv">
+        <img src="{{asset('assets/mobile/images/page9Img4.png')}}" onClick="closeNoVote();">
     </div>
 </div>
 @endsection

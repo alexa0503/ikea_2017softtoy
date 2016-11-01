@@ -553,7 +553,8 @@ function submitImageInfo() {
 }
 
 function voteId(e) {
-    var url = $('.idVoteBtn').attr('data-url');
+    //var url = $('.idVoteBtn').attr('data-url');
+    var url = $(e).attr('data-url');
     $.getJSON(url,function(json){
         if(json.ret == 0){
             console.log(obj);
