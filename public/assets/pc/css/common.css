@@ -168,8 +168,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .listSearchBtn{ left:950px; top:122px;}
 .imagesList{ position:absolute; left:82px; top:179px; width:930px; height:400px; overflow:hidden;}
 .ilInit{ width:185px; height:194px; float:left; overflow:hidden;}
-.iOuter{ position:absolute; left:10px; top:1px; width:164px; height:108px; overflow:hidden;}
-.iImg{ width:164px; height:auto; min-height:108px;}
+.iOuter{ position:absolute; left:10px; top:1px; width:164px; height:108px; overflow:hidden; text-align:center;}
+.iImg{ width:auto/*164px*/; height:108px;/* min-height:108px;*/ display:block; margin:0 auto;}
 .iCover{ left:0; top:0;}
 .ilName{ color:#000; font-size:12px; font-weight:bolder; left:8px; top:129px; line-height:100%;}
 .ilTitle{ color:#000; font-size:12px; font-weight:bolder; left:8px; top:158px; line-height:100%;}
@@ -177,8 +177,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .listNav a{ margin:0 5px; color:#000; font-size:14px;}
 .listNav a.sBtn{ margin-left:0 15px;}
 
-.imgDetail{ width:411px; height:569px; position:absolute; left:50%; top:87px; margin-left:-205px; overflow:hidden;}
-.idImg{ width:380px; height:auto; min-height:252px; left:18px; top:60px;}
+.imgDetail{ width:411px; height:569px; position:absolute; left:50%; top:87px; margin-left:-205px; overflow:hidden; background:#FFF;}
+.idImg{ width:auto/*380px*/; height:252px; /*min-height:252px; left:18px; top:60px;*/ position:static; display:block; margin:0 auto; padding-top:60px;}
 .idCover{ left:0; top:0;}
 .idName{ font-size:14px; font-weight:bolder; color:#000; position:absolute; left:21px; top:346px; line-height:100%;}
 .idTitle{ font-size:14px; font-weight:bolder; color:#000; position:absolute; left:21px; top:390px; line-height:100%;}
