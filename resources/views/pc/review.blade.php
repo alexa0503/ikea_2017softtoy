@@ -8,15 +8,36 @@
             	<div class="pageReviewBg"></div>
 
                 <div class="reviewBlock">
-                	<img src="{{asset('/assets/pc/images/review.jpg')}}">
+                	<div class="innerDiv">
+                    	<div id="scrollbar3">
+                            <div class="scrollbar">
+                                <div class="track">
+                                    <div class="thumb">
+                                        <div class="end" style="display:none;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <div class="overview">
+                                    <img src="{{asset('/assets/pc/images/review.jpg')}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                <script>
+                	$(function(){
+						$('#scrollbar3').tinyscrollbar();
+						})
+                </script>
 
                 <div class="nav nav1">
                 	<ul>
                         <li class="navBtn1"><a href="{{url('/')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn2"><a href="{{url('my')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn3"><a href="{{url('list')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn4"><a href="{{url('my')}}"  class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn4"><a href="{{url('review')}}"  class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn5"><a href="javascript:void(0);" onclick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn6"><a href="{{url('winners')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
 
