@@ -29,6 +29,7 @@ class CreateWorksTable extends Migration
             $table->integer('like_num')->unsigned();
             $table->integer('employees_like_num')->unsigned();
             $table->integer('degree')->unsigned()->nullable();
+            $table->integer('is_active')->default(1);
             $table->string('created_ip',120)->nullable();
             $table->timestamps();
         });

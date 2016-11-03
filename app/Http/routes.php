@@ -83,30 +83,12 @@ Route::any('/admin/logout', function(){
 Route::any('/wechat/auth', 'WechatController@auth');
 Route::any('/wechat/callback', 'WechatController@callback');
 
-Route::group(['middleware' => ['auth:admin','menu']], function () {
-    Route::get('admin', 'CmsController@index')->name('admin_dashboard');
-    Route::get('admin/users', 'CmsController@users');
-    Route::get('admin/account', 'CmsController@account');
-    Route::post('admin/account', 'CmsController@accountPost');
-    Route::get('admin/wechat', 'CmsController@wechat');
-    Route::get('admin/user/logs', 'CmsController@userLogs');
-    Route::get('admin/export', 'CmsController@export');
-    Route::get('admin/photos', 'CmsController@photos');
-    Route::get('admin/photos/export', 'CmsController@photosExport');
-    Route::get('admin/sessions', 'CmsController@sessions');
-    Route::get('admin/session/{id}', 'CmsController@sessions');
-    Route::get('admin/lotteries', 'CmsLotteryController@lotteries');
-    Route::get('admin/prizes', 'CmsLotteryController@prizes');
-    Route::post('admin/prize/update/{id}', 'CmsLotteryController@prizeUpdate');//
-    Route::get('admin/lottery/configs', 'CmsLotteryController@lotteryConfigs');
-    Route::post('admin/lottery/config/update/{id}', 'CmsLotteryController@lotteryConfigUpdate');
-    Route::post('admin/lottery/config/add', 'CmsLotteryController@lotteryConfigAdd');
-    Route::get('admin/prize/configs', 'CmsLotteryController@prizeConfigs');
-    Route::get('admin/prize/config/update/{id}', 'CmsLotteryController@prizeConfig');
-    Route::post('admin/prize/config/update/{id}', 'CmsLotteryController@prizeConfigUpdate');
-    Route::get('admin/prize/config/add', 'CmsLotteryController@prizeConfigAdd');
-    Route::post('admin/prize/config/add', 'CmsLotteryController@prizeConfigStore');
-    Route::get('admin/prize/codes', 'CmsLotteryController@prizeCodes');
+Route::group(['middleware' => ['auth:admin','menu'], 'prefix'=>'admin'], function () {
+    Route::get('/', 'Admin\IndexController@index')->name('admin_dashboard');
+    Route::get('works', 'Admin\IndexController@works');
+    Route::get('work/update/{id}', 'Admin\IndexController@workUpdate');
+    Route::get('account', 'Admin\IndexController@account');
+    Route::post('account', 'Admin\IndexController@accountPost');
 });
 //初始化后台帐号
 Route::get('admin/install', function () {

@@ -21,7 +21,7 @@ class HomeController extends Controller
     }
     public function workList(Request $request)
     {
-        $model = App\Work::whereNotNull('title');
+        $model = App\Work::where('is_active', '1');
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {

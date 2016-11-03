@@ -17,13 +17,6 @@ class MobileController extends Controller
         $this->middleware('web');
         $this->middleware('wechat.auth');
     }
-    public function img()
-    {
-        phpinfo();
-        $image = Image::make(public_path('uploads/photo/IMG_0427.JPG'));
-        var_dump($image);
-        return;
-    }
     public function review()
     {
         return view('mobile/review');
@@ -52,11 +45,20 @@ class MobileController extends Controller
     }
     public function vote(Request $request, $id)
     {
-        $count1 = App\WorkLike::where('user_id', Session::get('wechat.id'))->count();
+        $now = Carbon::now();
+        $tomorrow = Carbon::tomorrow();
+        $count1 = App\WorkLike::where('user_id', Session::get('wechat.id'))
+            ->where('created_at', '<', $tomorrow)
+            ->where('created_at', '<=', $now)
+            ->count();
         if($count1 > 10){
             return ['ret'=>1001,'msg'=>'一天只能赞10次嗷'];
         }
-        $count2 = App\WorkLike::where('user_id', Session::get('wechat.id'))->where('work_id', $id)->count();
+        $count2 = App\WorkLike::where('user_id', Session::get('wechat.id'))
+            ->where('created_at', '<', $tomorrow)
+            ->where('created_at', '<=', $now)
+            ->where('work_id', $id)
+            ->count();
         if($count2 > 0){
             return ['ret'=>1002,'msg'=>'您已经赞过啦'];
         }
@@ -75,7 +77,7 @@ class MobileController extends Controller
     }
     public function works(Request $request)
     {
-        $model = App\Work::whereNotNull('title');
+        $model = App\Work::where('is_active', '1');
         if( null != $request->get('key') ){
             $model->where(function($query) use ($request)
             {
@@ -132,7 +134,7 @@ class MobileController extends Controller
     public function share(Request $request,$id)
     {
         $work = App\Work::find($id);
-        if( null == $work){
+        if( null == $work || $work->is_active == 0){
             return redirect(url('mobile/index'));
         }
         return view('mobile/my',['work'=>$work]);

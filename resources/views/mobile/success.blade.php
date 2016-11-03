@@ -33,6 +33,9 @@
                 <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
                 <img src="{{asset('/assets/mobile/images/page7Img2.png')}}" class="abs page7Img2">
+                
+                <a href="{{url('mobile/my')}}" class="abs" style="left:194px; top:471px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="250" height="132"></a>
+                
 				<a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 				<a href="{{url('mobile/my')}}" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 				<a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
