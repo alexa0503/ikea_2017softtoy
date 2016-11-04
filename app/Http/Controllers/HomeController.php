@@ -31,11 +31,17 @@ class HomeController extends Controller
             });
             //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
-        if( 'num' != $request->get('order') ){
+
+        if( 'time' == $request->get('order') ){
             $model->orderBy('created_at', 'DESC');
         }
-        else{
+        elseif( 'num' == $request->get('order')){
             $model->orderBy('like_num', 'DESC');
+        }
+        else{
+            $n = rand(1,3);
+            $sort_type = rand(1,2) == 1 ? 'DESC' : 'ASC';
+            $model->orderBy('sort'.$n, $sort_type);
         }
         $works = $model->paginate(10);
         $works->setPath('list?order='.$request->get('order').'&key='.$request->get('key'));
