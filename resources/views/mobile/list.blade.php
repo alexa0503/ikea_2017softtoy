@@ -15,7 +15,8 @@
 
 				<form method="get" action="{{url('mobile/list')}}" id="search_form">
                 <select class="listSel" name="order">
-                	<option value="time" {{ Request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间排序</option>
+					<option value="">筛选/FILTER</option>
+                	<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
                     <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
                 </select>
 
@@ -24,10 +25,8 @@
                 <a href="javascript:void(0);" class="abs listSearchBtn"><img src="{{asset('assets/mobile/images/space.gif')}}" width="53" height="56"></a>
 
                 <div class="imagesList">
-                	<div class="innerDiv">
-
+                	<div class="innerDiv" id="pager">
                     </div>
-
                 	<div class="clear"></div>
                 </div>
 

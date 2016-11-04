@@ -641,12 +641,11 @@ function loadListImg(url) {
         var order = queryString('order');
         //ajax请求数据
         $.get(url,{page:page,key:key,order:order},function(html){
-            $('.imagesList .innerDiv').append(html);
+            $('#pager').append(html);
             if(html != ''){
                 loadListImgLock = true; //请求成功或者失败都解锁 如果没有数据了则不用解锁
                 ++page;
             }
-
         });
     }
 }

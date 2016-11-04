@@ -7,7 +7,8 @@
             	<div class="page7Bg"></div>
 				<form method="get" action="{{url('list')}}" id="search_form">
 					<select class="listSel" name="order">
-						<option value="time" {{ Request::get('order') != 'num' ? 'selected=selected' : ''}}>按时间排序</option>
+						<option value="">筛选/FILTER</option>
+						<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
 	                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
 	                </select>
 
