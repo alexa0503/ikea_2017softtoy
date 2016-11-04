@@ -25,3 +25,5 @@ public/qrcodes
 .idea/workspace.xml
 
 .DS_Store
+public/.DS_Store
+public/assets/.DS_Store
