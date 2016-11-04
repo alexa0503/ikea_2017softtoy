@@ -54,7 +54,7 @@
                 <textarea class="uploadTxtarea" name="introduction" maxlength="50" style="color:#a9a9a9;" onClick="$('.uploadTxtarea').css('color','#000').html('');">限50个字以内</textarea>
 
                 <a href="javascript:void(0);" class="abs agreeLice1 agreeLiceOn" onClick="changeAgree(this);"><img src="{{asset('/assets/mobile/images/page5Img3.png')}}"></a>
-                <a href="javascript:void(0);" class="abs agreeLice2" onClick="changeAgree(this);"><img src="{{asset('/assets/mobile/images/page5Img3.png')}}"></a>
+                <a href="javascript:void(0);" class="abs agreeLice2 agreeLiceOn" onClick="changeAgree(this);"><img src="{{asset('/assets/mobile/images/page5Img3.png')}}"></a>
                 <a href="javascript:void(0);" class="abs uploadBtn3" onClick="showLice();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="116" height="24"></a>
                 <a href="javascript:void(0);" class="abs uploadBtn4" onClick="showLice();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="150" height="24"></a>
 
