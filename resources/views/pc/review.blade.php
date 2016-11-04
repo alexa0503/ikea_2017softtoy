@@ -19,7 +19,7 @@
                             </div>
                             <div class="viewport">
                                 <div class="overview">
-                                    <img src="{{asset('/assets/pc/images/review.jpg')}}">
+                                    <img src="{{asset('/assets/pc/images/review.jpg')}}" width="978" height="1033">
                                 </div>
                             </div>
                         </div>
