@@ -41,7 +41,16 @@ class HomeController extends Controller
         else{
             $n = rand(1,3);
             $sort_type = rand(1,2) == 1 ? 'DESC' : 'ASC';
-            $model->orderBy('sort'.$n, $sort_type);
+            if($request->get('page') == 1 || $request->get('page') == null){
+                Session::set('page.sort.field', 'sort'.$n);
+                Session::set('page.sort.type', $sort_type);
+            }
+            if( null != Session::get('page.sort.field') ){
+                $sort_field = Session::get('page.sort.field');
+                $sort_type = Session::get('page.sort.type');
+                $model->orderBy($sort_field, $sort_type);
+            }
+
         }
         $works = $model->paginate(10);
         $works->setPath('list?order='.$request->get('order').'&key='.$request->get('key'));
