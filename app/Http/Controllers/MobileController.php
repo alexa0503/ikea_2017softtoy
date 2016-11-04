@@ -87,11 +87,16 @@ class MobileController extends Controller
             });
             //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
-        if( 'num' != $request->get('order') ){
+        if( 'time' == $request->get('order') ){
             $model->orderBy('created_at', 'DESC');
         }
-        else{
+        elseif( 'num' == $request->get('order')){
             $model->orderBy('like_num', 'DESC');
+        }
+        else{
+            $n = rand(1,3);
+            $sort_type = rand(1,2) == 1 ? 'DESC' : 'ASC';
+            $model->orderBy('sort'.$n, $sort_type);
         }
         $works = $model->paginate(10);
         $works->setPath('list?order='.$request->get('order').'&key='.$request->get('key'));
@@ -113,11 +118,12 @@ class MobileController extends Controller
         ];
         $response = App\Helper\HttpClient::post($url, $data);
         $result = json_decode($response, true);
-        if( $request->input('mobile') == '15618892632' || (null != $result['resCode'] && $result['resCode'] == '000')){
+        if( $request->input('mobile') == '15618892632' || (null != $result['resCode'] &&
+        $result['resCode'] == '000')){
             $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
             $wechat_user->name = $request->input('name');
             $wechat_user->mobile = $request->input('mobile');
-            $request->session()->set('wechat.mobile', $wechat_user->mobile);
+            Session::set('wechat.mobile', $wechat_user->mobile);
             $wechat_user->save();
             return ['ret'=>0];
         }
@@ -153,6 +159,7 @@ class MobileController extends Controller
         $work->comment = $request->input('comment');
         $work->expect = $request->input('expect');
         $work->degree = $request->input('degree');
+        $work->save();
         return ['ret'=>0,'msg'=>''];
     }
     public function upload()
@@ -164,10 +171,14 @@ class MobileController extends Controller
         if($count > 0){
             return redirect(url('mobile/my'));
         }
-        return view('mobile/upload');
+        $user = App\WechatUser::find(Session::get('wechat.id'));
+        $mobile = $user->mobile;
+        return view('mobile/upload', ['mobile'=>$mobile]);
     }
     public function postUpload(Request $request)
     {
+        //$user = App\WechatUser::find(Session::get('wechat.id'));
+        //$mobile = $user->mobile;
         $count = App\Work::where('user_id', Session::get('wechat.id'))->count();
         if($count > 0){
             return ['ret'=>1001,'msg'=>'已经上传过照片了'];
@@ -207,8 +218,11 @@ class MobileController extends Controller
         $work->created_ip = $request->getClientIp();
         $work->comment = null;
         $work->expect = null;
+        $work->sort1 = rand(1,9999999);
+        $work->sort2 = rand(1,9999999);
+        $work->sort3 = rand(1,9999999);
         $work->save();
-        \QrCode::format('png')->size(600)->generate(url('mobile/share', ['id'=>$work->id]),public_path('uploads/qrcodes/'.$work->id.'.png'));
+        \QrCode::format('png')->size(600)->generate(url('mobile/share', ['id'=>$work->id]).'?utm_source=qrcode',public_path('uploads/qrcodes/'.$work->id.'.png'));
         return ['ret'=>0,'msg'=>'','url'=>url('mobile/success')];
     }
 }

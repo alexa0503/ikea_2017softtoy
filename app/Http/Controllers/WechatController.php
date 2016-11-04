@@ -38,9 +38,9 @@ class WechatController extends Controller
                 $province  = '';
                 $city  = '';
                 $sex = '';
-                $wechat_user = \App\WechatUser::where('open_id', $openid);
-                if ($wechat_user->count() > 0) {
-                    $wechat = $wechat_user->first();
+                $model = \App\WechatUser::where('open_id', $openid);
+                if ($model->count() > 0) {
+                    $wechat = $model->first();
                     $wechat->updated_at = Carbon::now();
                 } else {
                     $wechat = new \App\WechatUser();
