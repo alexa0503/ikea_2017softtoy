@@ -84,7 +84,7 @@
 <!-- End login container -->
 <div class="container">
     <div class="footer">
-        <p class="text-center">&copy;2016 Copyright Alexa. All right reserved !!!</p>
+        <p class="text-center"><!--&copy;2016 Copyright Alexa. All right reserved !!!--></p>
     </div>
 </div>
 <!-- Javascripts -->

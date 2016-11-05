@@ -139,7 +139,15 @@ class MobileController extends Controller
     }
     public function my()
     {
-        $work = App\Work::where('user_id', Session::get('wechat.id'))->first();
+        //var_dump(Session::get('wechat.mobile'));
+        if( null == Session::get('wechat.mobile')){
+            return redirect(url('mobile/index'));
+        }
+        $users = App\WechatUser::where('mobile', Session::get('wechat.mobile'))->get();
+        $ids = $users->map(function ($user){
+            return $user->id;
+        })->toArray();
+        $work = App\Work::whereIn('id', $ids)->first();
         if( null == $work){
             return redirect(url('mobile/index'));
         }
@@ -175,7 +183,13 @@ class MobileController extends Controller
         if( Session::get('wechat.mobile') == null ){
             return redirect(url('mobile/login'));
         }
-        $count = App\Work::where('user_id', Session::get('wechat.id'))->count();
+        //$count = App\Work::where('user_id', Session::get('wechat.id'))->count();
+
+        $users = App\WechatUser::where('mobile', Session::get('wechat.mobile'))->get();
+        $ids = $users->map(function ($user){
+            return $user->id;
+        })->toArray();
+        $count = App\Work::whereIn('id', $ids)->count();
         if($count > 0){
             return redirect(url('mobile/my'));
         }
@@ -187,7 +201,15 @@ class MobileController extends Controller
     {
         //$user = App\WechatUser::find(Session::get('wechat.id'));
         //$mobile = $user->mobile;
-        $count = App\Work::where('user_id', Session::get('wechat.id'))->count();
+        //$count = App\Work::where('user_id', Session::get('wechat.id'))->count();
+        if( null == Session::get('wechat.mobile')){
+            return ['ret'=>1001,'msg'=>'您还没有登录嗷'];
+        }
+        $users = App\WechatUser::where('mobile', Session::get('wechat.mobile'))->get();
+        $ids = $users->map(function ($user){
+            return $user->id;
+        })->toArray();
+        $count = App\Work::whereIn('id', $ids)->count();
         if($count > 0){
             return ['ret'=>1001,'msg'=>'已经上传过照片了'];
         }
