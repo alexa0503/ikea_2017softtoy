@@ -57,16 +57,26 @@ Route::get('/wx/share', function(){
     return json_encode(array_merge($share, $config));
 });
 Route::get('logout',function(){
-    Request::session()->set('wechat.openid',null);
-    Request::session()->set('wechat.id',null);
-    return redirect('/');
+    //Request::session()->set('wechat.openid',null);
+    //Request::session()->set('wechat.id',null);
+    \Session::set('wechat.openid',null);
+    \Session::set('wechat.id',null);
+    \Session::set('wechat.mobile', null);
+    \Session::set('wechat.nickname', null);
+    \Session::set('wechat.headimg', null);
+    return redirect('mobile');
 });
 Route::get('login',function(){
-    $wechat_user = App\WechatUser::find(1);
-    Request::session()->set('wechat.openid',$wechat_user->open_id);
-    Request::session()->set('wechat.id',$wechat_user->id);
-    Request::session()->set('wechat.nickname',json_decode($wechat_user->nick_name));
-    return redirect('/');
+    $wechat_user = \App\WechatUser::first();
+    \Session::set('wechat.openid',$wechat_user->open_id);
+    \Session::set('wechat.id',$wechat_user->id);
+    \Session::set('wechat.mobile', $wechat_user->mobile);
+    \Session::set('wechat.nickname', $wechat_user->nick_name);
+    \Session::set('wechat.headimg', $wechat_user->head_img);
+    //Request::session()->set('wechat.openid',$wechat_user->open_id);
+    //Request::session()->set('wechat.id',$wechat_user->id);
+    //Request::session()->set('wechat.nickname',json_decode($wechat_user->nick_name));
+    return redirect('mobile');
 });
 
 ///

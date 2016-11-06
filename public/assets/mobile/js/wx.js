@@ -18,6 +18,7 @@ function wxShare(data){
             imgUrl: data.imgUrl,
             trigger: function (res) {},
             success: function (res) {
+                ga('send', 'event', 'share', 'click', 'myartwork_share');
             },
             cancel: function (res) {},
             fail: function (res) {}
@@ -28,6 +29,7 @@ function wxShare(data){
             imgUrl: data.imgUrl,
             trigger: function (res) {},
             success: function (res) {
+                ga('send', 'event', 'share', 'click', 'myartwork_share'); 
             },
             cancel: function (res) {},
             fail: function (res) {}
