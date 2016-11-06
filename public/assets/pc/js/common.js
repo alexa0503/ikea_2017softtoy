@@ -383,6 +383,7 @@ function closeDetail() {
 
 function showDetail(e) {
     var url = $(e).attr('data-url');
+	ga('send','event','gallery','click','artwork:'+url);
     $.getJSON(url, function(json) {
         $('.idImg').attr('src', json.data.img_url)
         $('.idName').html(json.data.child_name);

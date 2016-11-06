@@ -34,12 +34,12 @@
 
                 <div class="nav nav1">
                 	<ul>
-                        <li class="navBtn1"><a href="{{url('/')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn1"><a href="{{url('/')}}" onClick="gaTrackUrl(this,'button','click','homepage');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn2"><a href="{{url('my')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn3"><a href="{{url('list')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn4"><a href="{{url('review')}}"  class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn5"><a href="javascript:void(0);" onclick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn6"><a href="{{url('winners')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn3"><a href="{{url('list')}}" onClick="gaTrackUrl(this,'button','click','gallery');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn4"><a href="{{url('review')}}" onClick="gaTrackUrl(this,'button','click','review');"  class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn5"><a href="javascript:void(0);" onClick="showRule();ga('send','event','button','click','rules');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn6"><a href="{{url('winners')}}" onClick="gaTrackUrl(this,'button','click','winner');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
 
                     </ul>
                     <div class="clear"></div>

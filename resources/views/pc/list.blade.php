@@ -8,8 +8,8 @@
 				<form method="get" action="{{url('list')}}" id="search_form">
 					<select class="listSel" name="order">
 						<option value="">筛选/FILTER</option>
-						<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
-	                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
+						<option value="time" {{ request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
+	                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
 	                </select>
 
                 	<input type="text" class="listSearchTxt" value="{{Request::get('key')}}" name="key" placeholder="搜索/SEARCH">
@@ -55,12 +55,12 @@
 
                 <div class="nav nav1">
 					<ul>
-                    	<li class="navBtn1"><a href="{{url('/')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                    	<li class="navBtn1"><a href="{{url('/')}}" onClick="gaTrackUrl(this,'button','click','homepage');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                         <li class="navBtn2"><a href="{{url('my')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn3"><a href="{{url('list')}}" class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn4"><a href="{{url('review')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn5"><a href="javascript:void(0);" onClick="showRule();"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
-                        <li class="navBtn6"><a href="{{url('winners')}}"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn3"><a href="{{url('list')}}" onClick="gaTrackUrl(this,'button','click','gallery');" class="on"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn4"><a href="{{url('review')}}" onClick="gaTrackUrl(this,'button','click','review');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn5"><a href="javascript:void(0);" onClick="showRule();ga('send','event','button','click','rules');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
+                        <li class="navBtn6"><a href="{{url('winners')}}" onClick="gaTrackUrl(this,'button','click','winner');"><img src="{{asset('/assets/pc/images/space.gif')}}"></a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
