@@ -17,7 +17,7 @@ class WechatAuthMiddleware
     {
         $request->session()->set('wechat.redirect_uri', $request->getUri());
         if(env('APP_ENV') == 'local'){
-            $wechat_user = \App\WechatUser::find(1);
+            $wechat_user = \App\WechatUser::first();
             \Session::set('wechat.openid',$wechat_user->open_id);
             \Session::set('wechat.id',$wechat_user->id);
             \Session::set('wechat.mobile', $wechat_user->mobile);
