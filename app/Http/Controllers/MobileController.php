@@ -147,7 +147,7 @@ class MobileController extends Controller
         $ids = $users->map(function ($user){
             return $user->id;
         })->toArray();
-        $work = App\Work::whereIn('id', $ids)->first();
+        $work = App\Work::whereIn('user_id', $ids)->first();
         if( null == $work){
             return redirect(url('mobile/index'));
         }
@@ -189,7 +189,7 @@ class MobileController extends Controller
         $ids = $users->map(function ($user){
             return $user->id;
         })->toArray();
-        $count = App\Work::whereIn('id', $ids)->count();
+        $count = App\Work::whereIn('user_id', $ids)->count();
         if($count > 0){
             return redirect(url('mobile/my'));
         }
@@ -209,7 +209,7 @@ class MobileController extends Controller
         $ids = $users->map(function ($user){
             return $user->id;
         })->toArray();
-        $count = App\Work::whereIn('id', $ids)->count();
+        $count = App\Work::whereIn('user_id', $ids)->count();
         if($count > 0){
             return ['ret'=>1001,'msg'=>'已经上传过照片了'];
         }
