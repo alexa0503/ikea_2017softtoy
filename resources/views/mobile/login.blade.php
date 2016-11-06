@@ -5,17 +5,17 @@
     	<div class="page page2">
         	<div class="innerDiv">
             	<div class="page2Bg"></div>
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
-                <a href="{{url('mobile/my')}}" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/my')}}" onClick="gaTrackUrl(this,'button','click','myartwork');" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/list')}}" onClick="gaTrackUrl(this,'button','click','gallery');" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
                 <a href="javascript:void(0);" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
-                <a href="https://yijia.acxiom.com.cn/irw/" class="abs regBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="398" height="36"></a>
+                <a href="https://yijia.acxiom.com.cn/irw/" onClick="gaTrackUrl(this,'button','click','register');" class="abs regBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="398" height="36"></a>
 
                 <input type="tel" class="abs loginTxt loginTxt1" maxlength="11">
                 <input type="text" class="abs loginTxt loginTxt2">
-                <a href="javascript:void(0);" class="abs loginBtn" onClick="loginAction('{{url("mobile/login")}}','{{url("mobile/upload")}}');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
+                <a href="javascript:void(0);" class="abs loginBtn" onClick="ga('send','event','button','click','login');loginAction('{{url("mobile/login")}}','{{url("mobile/upload")}}');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
 <img src="{{asset('/assets/mobile/images/loading.gif')}}" width="60" height="60" class="pop loadingImg" style="display:none;">
 <div class="pop haveDoneNote" style="display:none;">
 	<div class="innerDiv">
-    	<a href="{{url('mobile/my')}}" class="abs haveDoneNoteBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
+    	<a href="{{url('mobile/my')}}" onClick="gaTrackUrl(this,'button','click','myartwork_login');" class="abs haveDoneNoteBtn"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
     </div>
 </div>
 @endsection

@@ -6,16 +6,16 @@
         	<div class="innerDiv">
             	<div class="page1Bg"></div>
 
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
-                <a href="{{url('mobile/login')}}" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/review')}}" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/login')}}" onClick="gaTrackUrl(this,'button','click','myartwork');" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/list')}}" onClick="gaTrackUrl(this,'button','click','gallery');" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/review')}}" onClick="gaTrackUrl(this,'button','click','review');" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
 
-                <a href="{{url('mobile/login')}}" class="abs page1Btn1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
-                <a href="{{url('mobile/list')}}" class="abs page1Btn2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
+                <a href="{{url('mobile/login')}}" onClick="gaTrackUrl(this,'button','click','join');" class="abs page1Btn1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
+                <a href="{{url('mobile/list')}}" onClick="gaTrackUrl(this,'button','click','vote');" class="abs page1Btn2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="215" height="112"></a>
             </div>
         </div>
     </div>

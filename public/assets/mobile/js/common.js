@@ -589,6 +589,7 @@ var obj;
 function showDetail(e) {
     obj = $(e);
     var url = $(e).attr('data-url');
+	ga('send','event','gallery','click','artwork:'+url);
     $.getJSON(url,function(json){
         $('.popBg').show();
         $('.idImg').attr('src',json.data.img_url)
@@ -617,6 +618,7 @@ function showRule() {
     $('.popBg').show();
     //$(window).scrollTop(0);
     $('.popRule').show();
+	ga('send','event','button','click','rules');
 }
 
 function closePop() {

@@ -6,18 +6,18 @@
     	<div class="page page7">
         	<div class="innerDiv">
             	<div class="page7Bg"></div>
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('assets/mobile/images/logo.png')}}"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('assets/mobile/images/space.gif')}}" width="144" height="59"></a>
-                <a href="{{url('mobile/my')}}" class="abs pageNav1"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/review')}}" class="abs pageNav3"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/my')}}" onClick="gaTrackUrl(this,'button','click','myartwork');" class="abs pageNav1"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/list')}}" onClick="gaTrackUrl(this,'button','click','gallery');" class="abs pageNav2"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="{{url('mobile/review')}}" onClick="gaTrackUrl(this,'button','click','review');" class="abs pageNav3"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
 				<form method="get" action="{{url('mobile/list')}}" id="search_form">
                 <select class="listSel" name="order">
 					<option value="">筛选/FILTER</option>
-                	<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
-                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
+                	<option value="time" {{ request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
+                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
                 </select>
 
                 <input type="text" name="key" class="listSearchTxt" value="{{Request::get('key')}}" placeholder="搜索/SEARCH">
@@ -113,7 +113,7 @@
 <div class="noVoteBg" style="display:none; z-index:999;" onClick="closeNoVote();"></div>
 <div class="pop noVote" style="display:none; z-index:999;">
     <div class="innerDiv">
-        <img src="{{asset('assets/mobile/images/page9Img4.png')}}" onClick="closeNoVote();">
+        <img src="{{asset('assets/mobile/images/page9Img4.png')}}" ontouchstart="ga('send','event','qrcode','click','scan_qr');" onClick="closeNoVote();">
     </div>
 </div>
 

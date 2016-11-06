@@ -7,11 +7,11 @@
         	<div class="innerDiv">
             	<div class="page3Bg"></div>
 
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
-                <input type="file" name="photo" class="uploadImg" id="uploadBtn" onChange="selectFileImage(this);setImagePreview();">
+                <input type="file" name="photo" class="uploadImg" id="uploadBtn" onChange="selectFileImage(this);setImagePreview();ga('send','event','button','click','newphoto');">
 
                 <div class="uploadImgBlock" style="display:none;">
                     <div class="innerDiv">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <a href="javascript:void(0);" class="abs uploadBtn1" onClick="goPage4();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
+                <a href="javascript:void(0);" class="abs uploadBtn1" onClick="goPage4();ga('send','event','button','click','upload');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
         	<div class="innerDiv">
             	<div class="page3BgB"></div>
 
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
             	<a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
@@ -58,10 +58,10 @@
                 <a href="javascript:void(0);" class="abs uploadBtn3" onClick="showLice();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="116" height="24"></a>
                 <a href="javascript:void(0);" class="abs uploadBtn4" onClick="showLice();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="150" height="24"></a>
 
-                <a href="javascript:void(0);" class="abs uploadBtn7" onClick="preView();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="73" height="102"></a>
+                <a href="javascript:void(0);" class="abs uploadBtn7" onClick="preView();ga('send','event','button','click','preview');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="73" height="102"></a>
 
-                <a href="javascript:void(0);" class="abs uploadBtn5" onClick="goPage3();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
-                <a href="javascript:void(0);" class="abs uploadBtn2" onClick="submitImages();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
+                <a href="javascript:void(0);" class="abs uploadBtn5" onClick="goPage3();ga('send','event','button','click','goback');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
+                <a href="javascript:void(0);" class="abs uploadBtn2" onClick="ga('send','event','button','click','information');submitImages();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
             </div>
         </div>
     </div>
@@ -192,7 +192,7 @@
         <div class="piName"></div>
 		<div class="piTitle"></div>
 		<div class="piDesc"></div>
-        <a href="javascript:void(0);" class="abs uploadBtn8" onClick="closePop();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
+        <a href="javascript:void(0);" class="abs uploadBtn8" onClick="closePop();ga('send','event','button','click','preview_close');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
     </div>
 </div>
 <div class="pop uploadPop" style="display:none; z-index:999;">

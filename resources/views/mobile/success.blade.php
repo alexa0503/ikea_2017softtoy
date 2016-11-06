@@ -7,7 +7,7 @@
         	<div class="innerDiv">
             	<div class="page4Bg"></div>
 
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
@@ -22,7 +22,7 @@
                 <a href="javascript:void(0);" class="pointSel pointSel4" onClick="pointSel(4);"><img src="{{asset('/assets/mobile/images/page6Img2.png')}}"></a>
                 <a href="javascript:void(0);" class="pointSel pointSel5 pointSelon" onClick="pointSel(5);"><img src="{{asset('/assets/mobile/images/page6Img2.png')}}"></a>
 				<input type="hidden" name="degree" class="degree" value="0" />
-                <a href="#" class="abs uploadSucceedBtn" onClick="submitImageInfo();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
+                <a href="#" class="abs uploadSucceedBtn" onClick="ga('send','event','button','click','submit');submitImageInfo();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="216" height="112"></a>
             </div>
         </div>
 
@@ -30,15 +30,15 @@
         	<div class="innerDiv">
             	<div class="page5Bg"></div>
 
-                <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
-                <img src="{{asset('/assets/mobile/images/page7Img2.png')}}" class="abs page7Img2">
+                <img src="{{asset('/assets/mobile/images/page7Img2.png')}}" ontouchstart="ga('send','event','qrcode','click','scan_qr_submit');" class="abs page7Img2">
                 
-                <a href="{{url('mobile/my')}}" class="abs" style="left:194px; top:471px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="250" height="132"></a>
+                <a href="{{url('mobile/my')}}" onClick="gaTrackUrl(this,'button','click','myartwork_submit');" class="abs" style="left:194px; top:471px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="250" height="132"></a>
                 
 				<a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
-				<a href="{{url('mobile/my')}}" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-				<a href="{{url('mobile/list')}}" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+				<a href="{{url('mobile/my')}}" onClick="gaTrackUrl(this,'button','click','myartwork');" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+				<a href="{{url('mobile/list')}}" onClick="gaTrackUrl(this,'button','click','gallery');" class="abs pageNav2"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 				<a href="javascript:void(0);" class="abs pageNav3"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
             </div>
