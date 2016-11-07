@@ -23,7 +23,7 @@
                 <div class="myImageTitle">{{$work->title}}</div>
                 <div class="myImageDesc">{{$work->introduction}}</div>
 
-                <a href="javascript:void(0);" class="myVoteBtn" onClick="voteId(this)" data-url="{{url('mobile/vote',['id'=>$work->id])}}">{{$work->like_num+$work->employees_like_num}}</a>
+                <a href="javascript:void(0);" class="myVoteBtn {{ $has_vote == 1 ? 'idVoteBtnEd' : ''}}" onClick="voteId(this)" data-url="{{url('mobile/vote',['id'=>$work->id])}}">{{$work->like_num+$work->employees_like_num}}</a>
             </div>
         </div>
 

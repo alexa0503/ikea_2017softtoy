@@ -151,7 +151,9 @@ class MobileController extends Controller
         if( null == $work){
             return redirect(url('mobile/index'));
         }
-        return view('mobile/my',['work'=>$work]);
+        $count = App\WorkLike::where('user_id', Session::get('wechat.id'))->count();
+        $has_vote = $count == 0 ? 0 : 1;
+        return view('mobile/my',['work'=>$work, 'has_vote'=>$has_vote ]);
     }
     public function share(Request $request,$id)
     {
@@ -159,7 +161,9 @@ class MobileController extends Controller
         if( null == $work || $work->is_active == 0){
             return redirect(url('mobile/index'));
         }
-        return view('mobile/my',['work'=>$work]);
+        $count = App\WorkLike::where('user_id', Session::get('wechat.id'))->count();
+        $has_vote = $count == 0 ? 0 : 1;
+        return view('mobile/my',['work'=>$work, 'has_vote'=>$has_vote]);
     }
     public function success()
     {
