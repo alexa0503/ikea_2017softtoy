@@ -651,3 +651,12 @@ function loadListImg(url) {
         });
     }
 }
+
+function showShareNote(){
+	$('.shareNoteBg').show();
+	$('.shareNoteImg').show();
+	}
+function closeShareNote(){
+	$('.shareNoteBg').hide();
+	$('.shareNoteImg').hide();
+	}

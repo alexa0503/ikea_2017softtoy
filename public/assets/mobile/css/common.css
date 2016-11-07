@@ -162,3 +162,9 @@ select,input,textarea{font-family:inherit; outline:none;}
 .page8Btn{ left:460px; top:433px;}
 
 .pageReview{ background:url(../images/review.jpg) 0 0 no-repeat; width:640px; height:1658px;}
+
+.shareNoteBtn1{ position:absolute; left:244px; top:795px;}
+.shareNoteBtn2{ position:absolute; left:301px; top:866px;}
+
+.shareNoteBg{ width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8; z-index:9999;}
+.shareNoteImg{ position:fixed; left:0; top:0; display:block; z-index:10000;}
