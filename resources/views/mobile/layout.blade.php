@@ -10,7 +10,7 @@
 <script src="{{asset('/assets/mobile/js/jquery-1.9.1.min.js')}}"></script>
 <script src="{{asset('/assets/mobile/js/jquery.form.js')}}"></script>
 <script src="{{asset('/assets/mobile/js/exif.js')}}"></script>
-<script src="{{asset('/assets/mobile/js/common.js')}}?v=0.01"></script>
+<script src="{{asset('/assets/mobile/js/common.js')}}"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="{{asset('/assets/mobile/js/wx.js')}}"></script>
 
@@ -100,8 +100,8 @@
     </div>
     
     @show
-    <div class="shareNoteBg" style="display:none;" onClick="closeShareNote();"></div>
-    <img src="{{asset('/assets/mobile/images/shareNote.png')}}" class="shareNoteImg" onClick="closeShareNote();" style="display:none;">
+    <div class="shareNoteBg" style="display:none; width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8; z-index:9999;" onClick="closeShareNote();"></div>
+    <img src="{{asset('/assets/mobile/images/shareNote.png')}}" class="shareNoteImg" onClick="closeShareNote();" style="display:none; position:fixed; left:0; top:0;  z-index:10000;">
     <script>
     $(document).ready(function() {
         $.ajaxSetup({

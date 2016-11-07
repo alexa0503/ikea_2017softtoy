@@ -108,7 +108,7 @@
         <div class="idDesc"></div>
         <a href="javascript:void(0);" class="abs idCloseBtn" onClick="closeDetail();"><img src="{{asset('assets/mobile/images/closeBtn.png')}}"></a>
         <a href="javascript:void(0);" class="idVoteBtn" data-url="" onClick="voteId(this);"></a>
-        <a href="javascript:void(0);" class="abs shareNoteBtn1" onClick="showShareNote();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="246" height="70"></a>
+        <a href="javascript:void(0);" class="abs shareNoteBtn1" onClick="showShareNote();" style=" position:absolute; left:244px; top:795px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="246" height="70"></a>
     </div>
 </div>
 <div class="noVoteBg" style="display:none; z-index:999;" onClick="closeNoVote();"></div>

@@ -25,7 +25,7 @@
 
                 <a href="javascript:void(0);" class="myVoteBtn {{ $has_vote == 1 ? 'idVoteBtnEd' : ''}}" onClick="voteId(this)" data-url="{{url('mobile/vote',['id'=>$work->id])}}">{{$work->like_num+$work->employees_like_num}}</a>
                 
-                <a href="javascript:void(0);" class="abs shareNoteBtn2" onClick="showShareNote();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="253" height="80"></a>
+                <a href="javascript:void(0);" class="abs shareNoteBtn2" onClick="showShareNote();" style=" position:absolute; left:301px; top:866px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="253" height="80"></a>
             </div>
         </div>
 
