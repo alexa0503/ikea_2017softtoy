@@ -17,11 +17,8 @@
                 <select class="listSel" name="order">
 					<option value="">筛选/FILTER</option>
                 	<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
-<<<<<<< Updated upstream
-                    <option value="num" {{ request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
-=======
                     <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
->>>>>>> Stashed changes
+                    <option value="num" {{ Request::get('order') == 'num' ?  'selected=selected' : ''}}>按点赞数排序</option>
                 </select>
 
                 <input type="text" name="key" class="listSearchTxt" value="{{Request::get('key')}}" placeholder="搜索/SEARCH">
