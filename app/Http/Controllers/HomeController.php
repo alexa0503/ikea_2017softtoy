@@ -4,12 +4,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Session;
+use Intervention\Image\ImageManagerStatic as Image;
 class HomeController extends Controller
 {
     public function __construct()
     {
         $this->middleware('web');
         //$this->middleware('wechat.auth');
+    }
+    public function resizeImg()
+    {
+        $file_name = 'test.jpg';
+        $image = Image::make(public_path('uploads/photo/').$file_name);
+        $width = 271;
+        $height = 225;
+        if ( ($image->height() / $image->width()) > ($height / $width)) {
+            $width = null;
+        } else {
+            $height = null;
+        }
+        $image->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $image->save(public_path('uploads/photo/thumb/').$file_name);
+        return ['ret'=>0, 'msg'=>'ok'];
     }
     public function index()
     {
@@ -29,7 +47,6 @@ class HomeController extends Controller
                       ->orWhere('child_name','LIKE', '%'.urldecode($request->get('key')).'%')
                       ->orWhere('mobile','LIKE', '%'.urldecode($request->get('key')).'%');
             });
-            //$model->where('title','like', '%'.urlencode($request->get('key')).'%');
         }
 
         if( 'time' == $request->get('order') ){

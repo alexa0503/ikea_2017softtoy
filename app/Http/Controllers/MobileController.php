@@ -46,17 +46,18 @@ class MobileController extends Controller
     public function vote(Request $request, $id)
     {
         $now = Carbon::now();
+        $today = Carbon::today();
         $tomorrow = Carbon::tomorrow();
         $count1 = App\WorkLike::where('user_id', Session::get('wechat.id'))
+            ->where('created_at', '>=', $today)
             ->where('created_at', '<', $tomorrow)
-            ->where('created_at', '<=', $now)
             ->count();
-        if($count1 > 10){
+        if($count1 >= 10){
             return ['ret'=>1001,'msg'=>'一天只能赞10次嗷'];
         }
         $count2 = App\WorkLike::where('user_id', Session::get('wechat.id'))
+            ->where('created_at', '>=', $today)
             ->where('created_at', '<', $tomorrow)
-            ->where('created_at', '<=', $now)
             ->where('work_id', $id)
             ->count();
         if($count2 > 0){
