@@ -11,13 +11,14 @@
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
-                <input type="file" name="photo" class="uploadImg" id="uploadBtn" onChange="selectFileImage(this);setImagePreview();ga('send','event','button','click','newphoto');">
+                <!--<input type="file" name="photo" class="uploadImg" id="uploadBtn" onChange="selectFileImage(this);setImagePreview();ga('send','event','button','click','newphoto');">-->
+                <a href="javascript:void(0);" class="uploadImg" onclick="wxSelImg();ga('send','event','button','click','newphoto');"><img src="{{asset('/assets/mobile/images/space.gif')}}" /></a>
 
                 <div class="uploadImgBlock" style="display:none;">
                     <div class="innerDiv">
-                        <img src="" class="abs upBtnImg upLoadImg" id="upBtnImg">
-                        <img src="" class="abs upLoadImg" id="preview" />
-                        <img src="" class="abs upLoadImg" id="localImag" />
+                        <img src="" class="upBtnImg upLoadImg" id="upBtnImg" style="display:none;">
+                        <img src="" class="upLoadImg" id="preview" />
+                        <img src="" class="upLoadImg" id="localImag" style="display:none;" />
                         <img src="{{asset('/assets/mobile/images/page4Img4.png')}}" class="uploadImgCover">
                     </div>
                 </div>

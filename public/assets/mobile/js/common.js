@@ -311,15 +311,16 @@ function setImagePreview() {
 
 
 function goUploadStep2() {
-    $('.upLoadImg').css({
+    /*$('.upLoadImg').css({
         'width': '0px',
         'height': '0px',
         'padding-top': '0px',
         'padding-left': '0px'
-    });
+    });*/
+	isSelectedImg = true;
     $('.uploadImgBlock').show();
     $('.uploadImg').addClass('uploadImged');
-    setTimeout(function() {
+    /*setTimeout(function() {
         var bili = 521 / 347;
         if (isOr) {
             var tw = originalImgWidth;
@@ -340,7 +341,7 @@ function goUploadStep2() {
                 'padding-left': (521 - (347 / originalImgHeight * originalImgWidth)) / 2 + 'px'
             });
         }
-    }, 100);
+    }, 100);*/
 }
 
 function goPage4() {
@@ -363,7 +364,7 @@ function goPage3() {
 function preView() {
     var piSrc = $('#preview').attr('src');
     $('.piImg').attr('src', piSrc);
-    var bili = 525 / 347;
+    /*var bili = 525 / 347;
     var imgBili = originalImgWidth / originalImgHeight;
     if (imgBili > bili) { //横版
         $('.piImg').css({
@@ -377,7 +378,7 @@ function preView() {
             'height': '347px',
             'padding-left': (525 - (347 / originalImgHeight * originalImgWidth)) / 2 + 'px'
         });
-    }
+    }*/
     $('.piName').text($.trim($('.uploadTxt2').val()));
     $('.piTitle').text($.trim($('.uploadTxt3').val()));
     var piDesc = $.trim($('.uploadTxtarea').val());
@@ -659,4 +660,12 @@ function showShareNote(){
 function closeShareNote(){
 	$('.shareNoteBg').hide();
 	$('.shareNoteImg').hide();
+	}
+	
+function wxSelImg(){
+	//微信接口上传图片
+	
+	//成功后
+	$('#preview').attr('src','');//返回的图片路径绑定
+	goUploadStep2();
 	}
