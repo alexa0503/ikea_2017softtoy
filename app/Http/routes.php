@@ -31,6 +31,7 @@ Route::get('mobile/login', 'MobileController@login');
 Route::post('mobile/login', 'MobileController@postLogin');
 Route::get('mobile/upload', 'MobileController@upload');
 Route::post('mobile/upload', 'MobileController@postUpload');
+Route::post('mobile/image/upload', 'MobileController@uploadImage');
 Route::get('mobile/success', 'MobileController@success');
 Route::post('mobile/success', 'MobileController@postSuccess');
 Route::get('mobile/work/{id}', 'MobileController@work');

@@ -24,7 +24,7 @@ function closeLoading() {
     $('.loadingImg').hide();
 }
 
-function loginAction(url1,url2) {
+function loginAction(url1, url2) {
     var lTel = $.trim($('.loginTxt1').val());
     var lName = $.trim($('.loginTxt2').val());
     var pattern = /^1\d{10}$/;
@@ -37,20 +37,22 @@ function loginAction(url1,url2) {
     } else {
         //ajax提交
         showLoading();
-		$.post(url1, {mobile:lTel,name:lName},function(json){
-			closeLoading();
-			if(json && json.ret == 0){
-		        window.location.href = url2;
-			}
-			else{
-				//$('.popBg').show();
-				//$('.haveDoneNote').show();
-				alert(json.msg)
-			}
-		},"json").fail(function(){
-			closeLoading();
-			alert('提交失败，请重试');
-		});
+        $.post(url1, {
+            mobile: lTel,
+            name: lName
+        }, function(json) {
+            closeLoading();
+            if (json && json.ret == 0) {
+                window.location.href = url2;
+            } else {
+                //$('.popBg').show();
+                //$('.haveDoneNote').show();
+                alert(json.msg)
+            }
+        }, "json").fail(function() {
+            closeLoading();
+            alert('提交失败，请重试');
+        });
 
         //已经上传过
         //closeLoading();
@@ -310,16 +312,34 @@ function setImagePreview() {
 }
 
 
-function goUploadStep2() {
+function goUploadStep2(url) {
     /*$('.upLoadImg').css({
         'width': '0px',
         'height': '0px',
         'padding-top': '0px',
         'padding-left': '0px'
     });*/
-	isSelectedImg = true;
-    $('.uploadImgBlock').show();
-    $('.uploadImg').addClass('uploadImged');
+    isSelectedImg = true;
+    var localId = $('#preview').attr('src');
+    wx.ready(function () {
+        wx.uploadImage({
+            localId: localId, // 需要上传的图片的本地ID，由chooseImage接口获得
+            isShowProgressTips: 1, // 默认为1，显示进度提示
+            success: function (res) {
+                var serverId = res.serverId; // 返回图片的服务器端ID
+                $.post(url, {serverId:serverId},function(json){
+                    if(json && json.ret == 0){
+                        $('.uploadImgBlock').show();
+                        $('.uploadImg').addClass('uploadImged');
+                    }
+                },'JSON').fail(function(){
+                    alert('上传失败~');
+                });
+
+            }
+        });
+    });
+
     /*setTimeout(function() {
         var bili = 521 / 347;
         if (isOr) {
@@ -470,10 +490,9 @@ function submitImages() {
         $('#form').ajaxSubmit({
             dataType: 'json',
             success: function(json) {
-                if(json.ret == 0){
+                if (json.ret == 0) {
                     uploadSuccess(json.url);
-                }
-                else{
+                } else {
                     $('.loadingBg').show();
                     $('.uploadPop2').show();
                     alert(json.msg);
@@ -525,13 +544,12 @@ function submitImageInfo() {
     $('#form').ajaxSubmit({
         dataType: 'json',
         success: function(json) {
-            if(json.ret == 0){
+            if (json.ret == 0) {
                 //提交成功
                 closeLoading();
                 $('.page4').hide();
                 $('.page5').show();
-            }
-            else{
+            } else {
                 closeLoading();
                 alert(json.msg);
             }
@@ -556,22 +574,21 @@ function submitImageInfo() {
 function voteId(e) {
     //var url = $('.idVoteBtn').attr('data-url');
     var url = $(e).attr('data-url');
-    $.getJSON(url,function(json){
-        if(json.ret == 0){
+    $.getJSON(url, function(json) {
+        if (json.ret == 0) {
             console.log(obj);
             var idv = parseInt($(e).html());
             idv++;
             $(e).html(idv);
-            if(obj){
+            if (obj) {
                 obj.find('.ilVote').html(idv);
             }
             $('.idVoteBtn').addClass('idVoteBtnEd');
-        }
-        else{
+        } else {
             $('.noVoteBg').show();
             $('.noVote').show();
         }
-    }).fail(function(){
+    }).fail(function() {
         alert('抱歉，请求失败~');
     })
 
@@ -587,29 +604,29 @@ function closeDetail() {
     $('.imgDetail').hide();
 }
 var obj;
+
 function showDetail(e) {
     obj = $(e);
     var url = $(e).attr('data-url');
-	ga('send','event','gallery','click','artwork:'+url);
-    $.getJSON(url,function(json){
+    ga('send', 'event', 'gallery', 'click', 'artwork:' + url);
+    $.getJSON(url, function(json) {
         $('.popBg').show();
-        $('.idImg').attr('src',json.data.img_url)
-        $('.idVoteBtn').attr('data-url',json.data.vote_url)
+        $('.idImg').attr('src', json.data.img_url)
+        $('.idVoteBtn').attr('data-url', json.data.vote_url)
         $('.idName').html(json.data.child_name);
         $('.idTitle').html(json.data.title);
         $('.idDesc').html(json.data.introduction);
         $('.idVoteBtn').html(json.data.vote_num);
-        if(json.data.has_vote == 1){
+        if (json.data.has_vote == 1) {
             $('.idVoteBtn').addClass('idVoteBtnEd');
-        }
-        else{
+        } else {
             $('.idVoteBtn').removeClass('idVoteBtnEd');
         }
 
         workId = json.data.id;
         //$(window).scrollTop(0);
         $('.imgDetail').show();
-    }).fail(function(){
+    }).fail(function() {
         alert('网络异常~');
     })
 }
@@ -619,7 +636,7 @@ function showRule() {
     $('.popBg').show();
     //$(window).scrollTop(0);
     $('.popRule').show();
-	ga('send','event','button','click','rules');
+    ga('send', 'event', 'button', 'click', 'rules');
 }
 
 function closePop() {
@@ -643,9 +660,13 @@ function loadListImg(url) {
         var key = queryString('key');
         var order = queryString('order');
         //ajax请求数据
-        $.get(url,{page:page,key:key,order:order},function(html){
+        $.get(url, {
+            page: page,
+            key: key,
+            order: order
+        }, function(html) {
             $('#pager').append(html);
-            if(html != ''){
+            if (html != '') {
                 loadListImgLock = true; //请求成功或者失败都解锁 如果没有数据了则不用解锁
                 ++page;
             }
@@ -653,19 +674,32 @@ function loadListImg(url) {
     }
 }
 
-function showShareNote(){
-	$('.shareNoteBg').show();
-	$('.shareNoteImg').show();
-	}
-function closeShareNote(){
-	$('.shareNoteBg').hide();
-	$('.shareNoteImg').hide();
-	}
-	
-function wxSelImg(){
-	//微信接口上传图片
-	
-	//成功后
-	$('#preview').attr('src','');//返回的图片路径绑定
-	goUploadStep2();
-	}
+function showShareNote() {
+    $('.shareNoteBg').show();
+    $('.shareNoteImg').show();
+}
+
+function closeShareNote() {
+    $('.shareNoteBg').hide();
+    $('.shareNoteImg').hide();
+}
+
+function wxSelImg(url) {
+    //微信接口上传图片
+    wx.ready(function () {
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                //alert(localIds);
+                //成功后
+                $('#preview').attr('src', localIds); //返回的图片路径绑定
+                goUploadStep2(url);
+            }
+        });
+    });
+
+
+}
