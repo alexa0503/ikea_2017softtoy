@@ -102,6 +102,10 @@ Route::group(['prefix'=>'employee'], function () {
         }
         return view('employee/login');
     });
+    Route::get('logout', function(){
+        Session::set('employee.id',null);
+        return view('employee/login');
+    });
     Route::post('login', function(){
         if( null == Request::input('ikea_id') || !preg_match('/^280\d{6}$/',Request::input('ikea_id'))){
             return ['ret'=>1000,'msg'=>'IKEA帐号不正确'];
