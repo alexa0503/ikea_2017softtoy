@@ -322,22 +322,25 @@ function goUploadStep2(url) {
     isSelectedImg = true;
     var localId = $('#preview').attr('src');
     wx.ready(function () {
-        wx.uploadImage({
-            localId: localId, // 需要上传的图片的本地ID，由chooseImage接口获得
-            isShowProgressTips: 1, // 默认为1，显示进度提示
-            success: function (res) {
-                var serverId = res.serverId; // 返回图片的服务器端ID
-                $.post(url, {serverId:serverId},function(json){
-                    if(json && json.ret == 0){
-                        $('.uploadImgBlock').show();
-                        $('.uploadImg').addClass('uploadImged');
-                    }
-                },'JSON').fail(function(){
-                    alert('上传失败~');
-                });
+        setTimeout(function(){
+            wx.uploadImage({
+                localId: localId, // 需要上传的图片的本地ID，由chooseImage接口获得
+                isShowProgressTips: 1, // 默认为1，显示进度提示
+                success: function (res) {
+                    var serverId = res.serverId; // 返回图片的服务器端ID
+                    $.post(url, {serverId:serverId},function(json){
+                        if(json && json.ret == 0){
+                            $('.uploadImgBlock').show();
+                            $('.uploadImg').addClass('uploadImged');
+                        }
+                    },'JSON').fail(function(){
+                        alert('上传失败~');
+                    });
 
-            }
-        });
+                }
+            });
+        },100);
+
     });
 
     /*setTimeout(function() {

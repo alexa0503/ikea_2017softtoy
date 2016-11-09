@@ -29,8 +29,11 @@ class WechatController extends Controller
         } else {
             $code = $request->get('code');
             $url = 'http://ikea.aitoy.com/wx/api/server/oauth2/getuser.json?code='.$code;
-            $data = json_decode(\App\Helper\HttpClient::get($url));
-            if( null != $data ){
+            $response = \App\Helper\HttpClient::get($url);
+            $data = json_decode($response);
+            \Log::useDailyFiles(storage_path().'/logs/wechat.log');
+            \Log::info($response);
+            if( null != $data && $data->obj && $data->obj->openid){
                 $openid = $data->obj->openid;
                 $nick_name = '';
                 $head_img = '';
@@ -65,6 +68,10 @@ class WechatController extends Controller
                 $request->session()->set('wechat.headimg', $wechat->head_img);
                 return redirect($request->session()->get('wechat.redirect_uri'));
             }
+            $callback_url = $request->getUriForPath('/wechat/callback');
+            $state = '';
+            $url = 'http://ikea.aitoy.com/wx/api/server/oauth2/snsapi_base.html?url='.$callback_url;
+            return redirect($url);
             return view('errors/503', ['error_msg' => 'error']);
         }
         /*
