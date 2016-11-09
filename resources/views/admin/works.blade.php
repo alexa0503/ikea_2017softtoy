@@ -52,6 +52,7 @@
                                 <table id="basic-datatables" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>照片</th>
                                         <th>手机号(IKEA)</th>
                                         <th>姓名(IKEA)</th>
@@ -70,6 +71,7 @@
                                     <tbody>
                                     @foreach ($works as $work)
                                     <tr>
+                                        <td>{{ $work->id }}</td>
                                         <td><a href="{{ asset('uploads/photo/'.$work->img_path) }}"><img src="{{ asset('uploads/photo/thumb/'.$work->img_path) }}" style="max-width:160px;max-height:160px;" /></a></td>
                                         <td>{{ $work->user->mobile }}</td>
                                         <td>{{ $work->user->name }}</td>
