@@ -38,7 +38,7 @@ class MobileController extends Controller
                 'has_vote'=> $count == 0 ? 0 : 1,
                 'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
                 'vote_url'=>url('mobile/vote',['id'=>$work->id]),
-                'vote_num'=>$work->like_num+$work->employees_like_num,
+                'vote_num'=>$work->like_num,
             ]
         ];
         return $result;

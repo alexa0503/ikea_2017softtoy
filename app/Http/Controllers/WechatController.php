@@ -33,7 +33,7 @@ class WechatController extends Controller
             $data = json_decode($response);
             \Log::useDailyFiles(storage_path().'/logs/wechat.log');
             \Log::info($response);
-            if( null != $data && $data->obj && $data->obj->openid){
+            if( null != $data && is_object($data->obj)){
                 $openid = $data->obj->openid;
                 $nick_name = '';
                 $head_img = '';
@@ -68,10 +68,10 @@ class WechatController extends Controller
                 $request->session()->set('wechat.headimg', $wechat->head_img);
                 return redirect($request->session()->get('wechat.redirect_uri'));
             }
-            $callback_url = $request->getUriForPath('/wechat/callback');
-            $state = '';
-            $url = 'http://ikea.aitoy.com/wx/api/server/oauth2/snsapi_base.html?url='.$callback_url;
-            return redirect($url);
+            //$callback_url = $request->getUriForPath('/wechat/callback');
+            //$state = '';
+            //$url = 'http://ikea.aitoy.com/wx/api/server/oauth2/snsapi_base.html?url='.$callback_url;
+            //return redirect($url);
             return view('errors/503', ['error_msg' => 'error']);
         }
         /*

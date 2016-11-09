@@ -1,5 +1,5 @@
 @foreach ($works as $work)
-<div class="ilInit" onClick="showDetail(this);" data-url="{{url('mobile/work/'.$work->id)}}">
+<div class="ilInit" onClick="showDetail(this);" data-url="{{url('employee/work/'.$work->id)}}">
     <div class="innerDiv">
         <img src="{{asset('uploads/photo/thumb/'.$work->img_path)}}" class="abs iImg">
         <a class="abs iCover"><img src="{{asset('assets/mobile/images/page10Img3.png')}}"></a>

@@ -64,7 +64,7 @@ function loginAction(url1, url2) {
     }
 }
 
-function loginAction2() {
+function loginAction2(url) {
     var uid = $.trim($('.loginTxt3').val());
     if (uid == '') {
         alert('请输入员工号');
@@ -72,15 +72,24 @@ function loginAction2() {
     } else {
         //ajax提交
         showLoading();
+        $.post(url,{ikea_id:uid},function(json){
+            if(json && json.ret == 0){
+                //提交成功
+                closeLoading();
+                window.location.href = json.redirect_uri;
+            }
+            else{
+                alert(json.msg);
+            }
+            //已经上传过
+            //closeLoading();
+            //$('.popBg').show();
+            //$('.haveDoneNote').show();
 
-        //已经上传过
-        //closeLoading();
-        //$('.popBg').show();
-        //$('.haveDoneNote').show();
+    	},"JSON").fail(function(){
+            alert('提交失败~');
+        });
 
-        //提交成功
-        closeLoading();
-        window.location.href = 'upload.html';
     }
 }
 
