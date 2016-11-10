@@ -73,9 +73,9 @@ function loginAction2(url) {
         //ajax提交
         showLoading();
         $.post(url,{ikea_id:uid},function(json){
+            closeLoading();
             if(json && json.ret == 0){
                 //提交成功
-                closeLoading();
                 window.location.href = json.redirect_uri;
             }
             else{
