@@ -174,7 +174,7 @@ Route::get('/wx/share', function(){
       'title' => env('WECHAT_SHARE_TITLE'),
       'desc' => env('WECHAT_SHARE_DESC'),
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
-      'link' => 'http://community.ikea.cn/activity/2016_softtoy/public/mobile',
+      'link' => 'http://community.ikea.cn/dev/2017softtoy_dev/public/employee',
     ];
     return json_encode(array_merge($share, $config));
 });
