@@ -7,7 +7,11 @@ function wxShare(data){
         signature: data.signature,
         jsApiList: [
             'onMenuShareTimeline',
-            'onMenuShareAppMessage'
+            'onMenuShareAppMessage',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage'
         ]
     });
     wx.ready(function () {
@@ -29,7 +33,7 @@ function wxShare(data){
             imgUrl: data.imgUrl,
             trigger: function (res) {},
             success: function (res) {
-                ga('send', 'event', 'share', 'click', 'myartwork_share'); 
+                ga('send', 'event', 'share', 'click', 'myartwork_share');
             },
             cancel: function (res) {},
             fail: function (res) {}

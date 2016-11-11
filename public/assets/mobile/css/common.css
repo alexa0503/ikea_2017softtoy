@@ -56,7 +56,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .haveDoneNoteBtn{ left:211px; top:390px;}
 
 .page3Bg{ background:url(../images/page4Img1.png) 0 0 no-repeat; width:640px; height:1010px;}
-.uploadImg{ display:block; width:521px; height:347px; opacity:0; position:absolute; left:60px; top:239px; cursor:pointer;}
+.uploadImg{ display:block; width:521px; height:347px; opacity:0; position:absolute; left:60px; top:239px; cursor:pointer; display:block;}
+.uploadImg img{ width:100%; height:100%; display:block;}
 .uploadImged{ width:216px; height:112px; left:86px; top:846px;}
 .uploadBtn1{ left:335px; top:846px;}
 
@@ -81,7 +82,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .agreeLiceOn{ opacity:1;}
 .uploadBtn3{ left:280px; top:736px;}
 .uploadBtn4{ left:348px; top:758px;}
-.uploadImgBlock{ width:521px; height:347px; overflow:hidden; position:absolute; left:60px; top:239px; background:#FFF;}
+.uploadImgBlock{ width:521px; height:347px; overflow:hidden; position:absolute; left:60px; top:239px; background:#FFF; text-align:center;}
+.uploadImgBlock .upLoadImg{ height:347px; width:auto; position:static; display:block; margin:0 auto;}
 .uploadImgCover{ position:absolute; left:0; top:0;}
 
 .uploadPop{ background:url(../images/page4Img2.png) 0 0 no-repeat; width:640px; height:553px; position:fixed; left:50%; top:50%; margin:-350px 0 0 -320px;}
@@ -93,6 +95,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .uploadBtn7{ left:459px; top:594px;}
 .popPreview{ background:url(../images/page5Img4.png) 0 0 no-repeat; width:574px; height:944px; position:fixed; left:50%; top:50%; margin:-472px 0 0 -287px;}
 .previewImgBlock{ position:absolute; left:25px; top:166px; width:525px; height:347px; overflow:hidden; background:#FFF;}
+.piImg{ display:block; width:auto; height:347px; margin:0 auto;}
 .page5Img5{ left:0; top:0;}
 .piName{ font-size:20px; font-weight:bolder; color:#000; position:absolute; width:245px; height:20px; overflow:hidden; right:25px; top:555px; line-height:100%; text-align:right;}
 .piTitle{ font-size:20px; font-weight:bolder; color:#000; position:absolute; width:200px; height:20px; overflow:hidden; right:25px; top:601px; line-height:100%; text-align:right;}
