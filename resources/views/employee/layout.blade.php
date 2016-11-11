@@ -115,7 +115,7 @@
     $(document).ready(function() {
         $.getJSON('{{url("wx/share")}}', {url:location.href},function(data){
             @section('wxShare')
-            data.link = '{{url("mobile/index")}}';
+            //data.link = '{{url("mobile/index")}}';
             wxShare(data);
             @show
         })

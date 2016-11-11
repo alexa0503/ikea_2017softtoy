@@ -10,6 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/', function(){
+    return redirect('employee');
+});
+/*
 Route::get('/', 'HomeController@index');
 Route::get('list', 'HomeController@workList');
 Route::get('review', 'HomeController@review');
@@ -37,7 +41,7 @@ Route::get('mobile/success', 'MobileController@success');
 Route::post('mobile/success', 'MobileController@postSuccess');
 Route::get('mobile/work/{id}', 'MobileController@work');
 Route::get('mobile/vote/{id}', 'MobileController@vote');
-
+*/
 Route::group(['prefix'=>'employee'], function () {
     Route::get('/', function(){
         if( Session::get('employee.id') == null ){
@@ -89,7 +93,7 @@ Route::group(['prefix'=>'employee'], function () {
                 'child_name'=>$work->child_name,
                 'introduction'=>$work->introduction,
                 'has_vote'=> $count == 0 ? 0 : 1,
-                'img_url'=>asset('uploads/photo/thumb/'.$work->img_path),
+                'img_url'=>'http://community.ikea.cn/dev/2017softtoy/public/uploads/photo/thumb/'.$work->img_path,
                 'vote_url'=>url('employee/vote',['id'=>$work->id]),
                 'vote_num'=>$work->like_num,
             ]
@@ -170,6 +174,7 @@ Route::get('/wx/share', function(){
       'title' => env('WECHAT_SHARE_TITLE'),
       'desc' => env('WECHAT_SHARE_DESC'),
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
+      'link' => 'http://community.ikea.cn/activity/2016_softtoy/public/mobile',
     ];
     return json_encode(array_merge($share, $config));
 });
