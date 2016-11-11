@@ -13,7 +13,7 @@
                 <a href="{{url('mobile/list')}}" onClick="" class="abs pageNav2"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
                 <a href="#" onClick="javascript:alert('系统提示：通道已关闭！');" class="abs pageNav3"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
-				<form method="get" action="{{url('mobile/list')}}" id="search_form">
+				<form method="get" action="{{url('employee')}}" id="search_form">
                 <select class="listSel" name="order">
 					<option value="">筛选/FILTER</option>
                 	<option value="time" {{ Request::get('order') == 'time' ? 'selected=selected' : ''}}>按时间排序</option>
