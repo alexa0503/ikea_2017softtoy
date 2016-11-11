@@ -101,7 +101,7 @@
 
     @show
     <div class="shareNoteBg" style="display:none; width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8; z-index:9999;" onClick="closeShareNote();"></div>
-    <img src="{{asset('/assets/mobile/images/shareNote.png')}}" class="shareNoteImg" onClick="closeShareNote();" style="display:none; position:fixed; left:0; top:0;  z-index:10000;">
+    <img src="{{asset('/assets/mobile/images/shareNote_mk.png')}}" class="shareNoteImg" onClick="closeShareNote();" style="display:none; position:fixed; left:0; top:0;  z-index:10000;">
     <script>
     $(document).ready(function() {
         $.ajaxSetup({

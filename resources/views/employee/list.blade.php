@@ -9,9 +9,9 @@
                 <a href="http://m.ikea.com/cn/zh/" onClick="" class="abs logo"><img src="{{asset('assets/mobile/images/logo.png')}}"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('assets/mobile/images/space.gif')}}" width="144" height="59"></a>
-                <a href="#" class="abs pageNav1"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="#" class="abs pageNav1" onClick="javascript:alert('系统提示：通道已关闭！');" ><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
                 <a href="{{url('mobile/list')}}" onClick="" class="abs pageNav2"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
-                <a href="{{url('mobile/review')}}" onClick="" class="abs pageNav3"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
+                <a href="#" onClick="javascript:alert('系统提示：通道已关闭！');" class="abs pageNav3"><img src="{{asset('assets/mobile/images/space.gif')}}" width="176" height="71"></a>
 
 				<form method="get" action="{{url('mobile/list')}}" id="search_form">
                 <select class="listSel" name="order">
@@ -97,7 +97,7 @@
         <a href="javascript:void(0);" class="abs ruleCloseBtn" onClick="closePop();"><img src="{{asset('/assets/mobile/images/closeBtn.png')}}"></a>
     </div>
 </div>
-<div class="pop imgDetail" style="display:none; z-index:999;">
+<div class="pop imgDetail" style="display:none; z-index:999;background:url({{asset('assets/mobile/images/page9Img1_mk.png')}}) 0 0 no-repeat;">
     <div class="innerDiv">
     	<div class="idOuter">
         	<img src="" class="idImg">

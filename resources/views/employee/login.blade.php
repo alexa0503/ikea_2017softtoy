@@ -8,7 +8,7 @@
 
                 <a href="http://m.ikea.com/cn/zh/" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 
-                <input type="tel" class="abs loginTxt loginTxt3">
+                <input type="tel" class="abs loginTxt loginTxt3" maxlength="8">
 
                 <a href="javascript:void(0);" class="abs loginBtn2" onClick="loginAction2('{{url("employee/login")}}');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
             </div>
