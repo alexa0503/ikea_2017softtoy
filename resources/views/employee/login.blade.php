@@ -10,7 +10,7 @@
 
                 <input type="tel" class="abs loginTxt loginTxt3" maxlength="8">
 
-                <a href="javascript:void(0);" class="abs loginBtn2" onClick="loginAction2('{{url("employee/login")}}');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
+                <a href="javascript:void(0);" class="abs loginBtn2" onClick="ga('send', 'event', 'button', 'click', 'login');loginAction2('{{url("employee/login")}}');"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="217" height="112"></a>
             </div>
         </div>
     </div>
