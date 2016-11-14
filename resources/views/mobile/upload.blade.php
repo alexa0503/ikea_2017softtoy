@@ -12,7 +12,7 @@
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
 
                 <!--<input type="file" name="photo" class="uploadImg" id="uploadBtn" onChange="selectFileImage(this);setImagePreview();ga('send','event','button','click','newphoto');">-->
-                <a href="javascript:void(0);" class="uploadImg" onclick="wxSelImg('{{url('mobile/image/upload')}}');ga('send','event','button','click','newphoto');"><img src="{{asset('/assets/mobile/images/space.gif')}}" /></a>
+                <a href="javascript:void(0);" class="uploadImg" onclick="javascript:alert('系统提示：上传活动已结束，中国区前20 作品将于11月25日揭晓，敬请期待！');return false;"><img src="{{asset('/assets/mobile/images/space.gif')}}" /></a>
 
                 <div class="uploadImgBlock" style="display:none;">
                     <div class="innerDiv">

@@ -45,6 +45,7 @@ class MobileController extends Controller
     }
     public function vote(Request $request, $id)
     {
+        return ['ret'=>1003, '系统提示：公众投票已结束'];
         $now = Carbon::now();
         $today = Carbon::today();
         $tomorrow = Carbon::tomorrow();
@@ -185,6 +186,7 @@ class MobileController extends Controller
     }
     public function upload()
     {
+        return [];
         if( Session::get('wechat.mobile') == null ){
             return redirect(url('mobile/login'));
         }
@@ -218,6 +220,7 @@ class MobileController extends Controller
         if($count > 0){
             return ['ret'=>1001,'msg'=>'已经上传过照片了'];
         }
+        /*
         if ( !$request->hasFile('photo')) {
             // && $request->file('photo')->getError() != 0
             return ['ret'=>1002, 'msg'=> '图片上传失败，不能超过8M~'];
@@ -238,7 +241,8 @@ class MobileController extends Controller
             $constraint->aspectRatio();
         });
         $image->save(public_path('uploads/photo/thumb/').$file_name);
-
+        */
+        $file_name = Session::get('wx.image');
         $work = new App\Work;
         $work->user_id = Session::get('wechat.id');
         $work->birth_date = $request->input('year').'-'.$request->input('month').'-'.$request->input('day');
@@ -259,5 +263,22 @@ class MobileController extends Controller
         $work->save();
         \QrCode::format('png')->size(600)->generate(url('mobile/share', ['id'=>$work->id]).'?utm_source=qrcode',public_path('uploads/qrcodes/'.$work->id.'.png'));
         return ['ret'=>0,'msg'=>'','url'=>url('mobile/success')];
+    }
+    public function uploadImage(Request $request)
+    {
+        $mediaId = $request->input('serverId');
+        $options = [
+          'app_id' => env('WECHAT_APPID'),
+          'secret' => env('WECHAT_SECRET'),
+          'token' => env('WECHAT_TOKEN')
+        ];
+        $app = new \EasyWeChat\Foundation\Application($options);
+        $temporary = $app->material_temporary;
+        $content = $temporary->getStream($mediaId);
+        $file_name = date('YmdHis').uniqid().'.jpg';
+        file_put_contents(public_path('uploads/photo/').$file_name, $content);
+        file_put_contents(public_path('uploads/photo/thumb/').$file_name, $content);
+        Session::set('wx.image', $file_name);
+        return ['ret'=>0, 'msg'=>$content];
     }
 }

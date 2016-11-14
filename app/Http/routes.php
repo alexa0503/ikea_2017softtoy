@@ -31,10 +31,15 @@ Route::get('mobile/login', 'MobileController@login');
 Route::post('mobile/login', 'MobileController@postLogin');
 Route::get('mobile/upload', 'MobileController@upload');
 Route::post('mobile/upload', 'MobileController@postUpload');
+Route::post('mobile/image/upload', 'MobileController@uploadImage');
+Route::get('mobile/image/upload', 'MobileController@uploadImage');
 Route::get('mobile/success', 'MobileController@success');
 Route::post('mobile/success', 'MobileController@postSuccess');
 Route::get('mobile/work/{id}', 'MobileController@work');
 Route::get('mobile/vote/{id}', 'MobileController@vote');
+Route::get('mobile/internal/', function(){
+    return redirect('http://community.ikea.cn/dev/2017softtoy_dev/public/employee');
+});
 
 Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));

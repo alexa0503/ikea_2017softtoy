@@ -575,6 +575,8 @@ function submitImageInfo() {
 }
 
 function voteId(e) {
+    alert('系统提示：公众投票已结束');
+    return false;
     //var url = $('.idVoteBtn').attr('data-url');
     var url = $(e).attr('data-url');
     $.getJSON(url, function(json) {
