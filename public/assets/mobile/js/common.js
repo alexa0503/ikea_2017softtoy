@@ -575,7 +575,7 @@ function submitImageInfo() {
 }
 
 function voteId(e) {
-    alert('系统提示：公众投票已结束');
+    alert('公众投票已结束');
     return false;
     //var url = $('.idVoteBtn').attr('data-url');
     var url = $(e).attr('data-url');
@@ -680,6 +680,8 @@ function loadListImg(url) {
 }
 
 function showShareNote() {
+    alert('公众投票已结束');
+    return;
     $('.shareNoteBg').show();
     $('.shareNoteImg').show();
 }
