@@ -186,7 +186,6 @@ class MobileController extends Controller
     }
     public function upload()
     {
-        return [];
         if( Session::get('wechat.mobile') == null ){
             return redirect(url('mobile/login'));
         }
@@ -206,6 +205,7 @@ class MobileController extends Controller
     }
     public function postUpload(Request $request)
     {
+        return ['ret'=>1001,'msg'=>'活动已关闭'];
         //$user = App\WechatUser::find(Session::get('wechat.id'));
         //$mobile = $user->mobile;
         //$count = App\Work::where('user_id', Session::get('wechat.id'))->count();
