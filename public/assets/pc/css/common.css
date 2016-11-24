@@ -19,7 +19,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .bg{ background:url(../images/bg.jpg) 0 0 no-repeat; width:1060px; height:704px; margin:0 auto;}
 
 .page{ position:absolute; left:0; top:0;}
-.page1Bg{ background:url(../images/page1Bg.jpg) 0 0 no-repeat; width:1060px; height:704px;}
+.page1Bg{ background:url(../images/page8Bg_bak.png) 0 0 no-repeat; width:1060px; height:704px;}
 .nav2{ position:absolute; left:78px; top:604px;}
 .nav ul{ width:910px; height:62px;}
 .nav ul li{ float:left; height:62px; float:left;}

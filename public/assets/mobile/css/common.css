@@ -21,7 +21,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .logo{ left:30px; top:15px;}
 
 .page{ position:absolute; left:0; top:0;}
-.page1Bg{ background:url(../images/page1Img1.png) 0 0 no-repeat; width:640px; height:1010px;}
+.page1Bg{ background:url(../images/newIndex.jpg) 0 0 no-repeat; width:640px; height:1010px;}
 .pageRuleBtn{ left:455px; top:15px;}
 
 .pageNav1{ left:24px; top:102px;}

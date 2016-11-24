@@ -5,9 +5,11 @@
     	<div class="page page1">
         	<div class="innerDiv">
             	<div class="page1Bg"></div>
-                <img src="{{asset('/assets/pc/images/page1Qc.jpg')}}" class="abs page1Qc">
+               
+               <a href="{{url('winners')}}" onClick="gaTrackUrl(this,'button','click','winnerlist');" class="abs page8Btn"><img src="{{asset('/assets/pc/images/space.gif')}}" width="145" height="75"></a>
+                <!--<img src="{{asset('/assets/pc/images/page1Qc.jpg')}}" class="abs page1Qc">
 
-                <a href="{{url('login')}}" class="abs page1Btn"><img src="{{asset('/assets/pc/images/space.gif')}}" width="148" height="37"></a>
+                <a href="{{url('login')}}" class="abs page1Btn"><img src="{{asset('/assets/pc/images/space.gif')}}" width="148" height="37"></a>-->
 
                 <div class="nav nav1">
                     <ul>

@@ -4,7 +4,7 @@
 	<div class="innerDiv">
     	<div class="page page1">
         	<div class="innerDiv">
-            	<div class="pageReview"></div>
+            	<div class="pageReview" style="background-image:url({{asset('/assets/mobile/images/award.jpg')}}); height:3486px;"></div>
 
                 <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
 

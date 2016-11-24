@@ -4,9 +4,11 @@
 	<div class="innerDiv">
     	<div class="page page1">
         	<div class="innerDiv">
-            	<div class="page1Bg"></div>
+            	<div class="page1Bg" style=" background-image:url({{asset('/assets/mobile/images/newIndex.jpg')}})"></div>
 
                 <a href="http://m.ikea.com/cn/zh/" onClick="gaTrackUrl(this,'button','click','IKEA');" class="abs logo"><img src="{{asset('/assets/mobile/images/logo.png')}}"></a>
+                
+                <a href="{{url('mobile/review')}}" onClick="gaTrackUrl(this,'button','click','newIndexBtn');" style="position: absolute; left: 209px; top: 446px;"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="220" height="114"></a>
 
                 <a href="javascript:void(0);" class="abs pageRuleBtn" onClick="showRule();"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="144" height="59"></a>
                 <a href="{{url('mobile/login')}}" onClick="gaTrackUrl(this,'button','click','myartwork');" class="abs pageNav1"><img src="{{asset('/assets/mobile/images/space.gif')}}" width="176" height="71"></a>

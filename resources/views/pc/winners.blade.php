@@ -2,11 +2,34 @@
 @section('content')
 <div class="bg">
 	<div class="innerDiv">
-    	<div class="page page8">
+    	<div class="page pageReview">
         	<div class="innerDiv">
-            	<div class="page8Bg"></div>
+            	<div class="pageReviewBg"></div>
 
-                <a href="#" onClick="gaTrackUrl(this,'button','click','winnerlist');" class="abs page8Btn"><img src="{{asset('/assets/pc/images/space.gif')}}" width="145" height="75"></a>
+                <div class="reviewBlock">
+                	<div class="innerDiv">
+                    	<div id="scrollbar3">
+                            <div class="scrollbar">
+                                <div class="track">
+                                    <div class="thumb">
+                                        <div class="end"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <div class="overview">
+                                    <img src="{{asset('/assets/pc/images/award.jpg')}}" width="978" height="1170">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                	$(function(){
+						$('#scrollbar3').tinyscrollbar();
+						})
+                </script>
 
                 <div class="nav nav1">
                 	<ul>
@@ -21,7 +44,35 @@
                 </div>
             </div>
         </div>
-		@include('pc.rule')
+
+        <div class="abs loadingBg" style="display:none;"></div>
+        <div class="rulePop" style="display:none;">
+        	<div class="innerDiv">
+            	<div class="ruleTitle"><img src="{{asset('/assets/pc/images/ruleTitle.png')}}"></div>
+                <div class="ruleBlock">
+                	<div class="innerDiv">
+						<div id="scrollbar">
+                            <div class="scrollbar">
+                                <div class="track">
+                                    <div class="thumb">
+                                        <div class="end"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <div class="overview">
+                                    <img src="{{asset('/assets/pc/images/rule.png')}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ruleBottom">
+                	<a href="javascript:void(0);" onClick="closeRule();"><img src="{{asset('/assets/pc/images/closeBtn.jpg')}}"></a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
