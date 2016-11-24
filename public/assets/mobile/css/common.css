@@ -28,8 +28,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .pageNav2{ left:231px; top:102px;}
 .pageNav3{ left:438px; top:102px;}
 
-.page1Btn1{ left:76px; top:853px;}
-.page1Btn2{ left:342px; top:853px;}
+.page1Btn1{ left:76px; top:853px;display: none;}
+.page1Btn2{ left:342px; top:853px;display: none;}
 
 .popBg,.noVoteBg{ width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8;}
 .popRule{ background:url(../images/ruleBg.png) 0 0 no-repeat; width:574px; height:944px; position:fixed; left:50%; top:50%; margin:-472px 0 0 -287px;}

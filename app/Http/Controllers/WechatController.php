@@ -48,6 +48,8 @@ class WechatController extends Controller
                     $wechat->created_at = Carbon::now();
                     $wechat->ip_address = $request->getClientIp();
                     $wechat->updated_at = null;
+                    $wechat->mobile = null;
+                    $wechat->name = null;
                 }
                 $wechat->gender = $sex;
                 $wechat->head_img = $head_img;
@@ -55,8 +57,6 @@ class WechatController extends Controller
                 $wechat->country = $country;
                 $wechat->province = $province;
                 $wechat->city = $city;
-                $wechat->mobile = null;
-                $wechat->name = null;
                 $wechat->save();
                 $request->session()->set('wechat.id', $wechat->id);
                 $request->session()->set('wechat.openid', $openid);
